@@ -1,0 +1,9 @@
+---
+title: "Kevin Stachelek's Blog"
+site: distill::distill_website
+listing: posts
+---
+
+<div id="widerimg">
+    <img src="images/chinatown_portrait.jpg">
+</div>

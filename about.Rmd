@@ -1,0 +1,16 @@
+---
+title: "About this blog"
+description: |
+  Some additional details about the blog
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+I'm a PhD student in the [PIBBS](https://keck.usc.edu/pibbs/) program at the University of Southern California (USC). 
+
+I'm also a member of the [Cobrinik](https://www.chla.org/research/cobrinik-laboratory) laboratory at Children's Hospital Los Angeles. 
+
+I'm interested in cancer biology and genomics, especially single cell sequencing. I'm an enthusiastic R user and bioinformatics student. `

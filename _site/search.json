@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this blog",
+      "description": "Some additional details about the blog",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2020-12-01T15:34:06-08:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Kevin Stachelek's Blog",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2020-12-01T15:34:07-08:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}
