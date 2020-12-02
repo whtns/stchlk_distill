@@ -50,7 +50,7 @@ I start by loading necessary package dependencies.
 # load required libraries -------------------------------------------------
 library(tidyverse)
 library(SingleCellExperiment)
-library(cataract)
+library(seuratTools)
 library(annotables)
 library(gtools)
 library(here)

@@ -1,10 +1,10 @@
 ---
 title: "Karyoploter for Somatic Copy Number Analysis"
 description: |
-  A short description of the post.
+  Copy Number Analysis
 author:
-  - name: Nora Jones
-    url: https://example.com/norajones
+  - name: Kevin Stachelek
+    url: https://stchlk.rbind.io
 date: 12-01-2020
 output:
   distill::distill_article:

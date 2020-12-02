@@ -1,7 +1,7 @@
 ---
 title: "Lab Meeting: Our Experience with Seurat"
 description: |
-  A short description of the post.
+  Experience with Seurat so far
 author:
   - name: Kevin Stachelek
     url: https://stchlk.rbind.io

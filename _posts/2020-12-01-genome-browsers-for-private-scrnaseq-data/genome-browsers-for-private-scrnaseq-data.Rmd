@@ -1,7 +1,7 @@
 ---
 title: "Genome browsers for Private scRNAseq Data"
 description: |
-  A short description of the post.
+  How do you set up a private genome browser?
 author:
   - name: Kevin Stachelek
     url: https://stchlk.rbind.io
