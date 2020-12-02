@@ -30,7 +30,7 @@
     "categories": [],
     "contents": "\nI presented at our weekly lab meeting last Friday and described our experiences with Seurat on our single cell data.\nWe have two projects ongoing:\nTranscriptional Response to Rb Loss in the Retinoblastoma Cell of Origin Single Cell RNA Sequencing (scRNAseq)\nChanges associated with retinal cone precursor development Single Cell RNA Sequencing (scRNAseq)\nI tried to cover:\nOur initial approaches to analyzing single cell data and why they fell short.\nHow we applied Seurat and what advantages it has offered.\nOther ways forward with similar mature single cell analysis tools.\nYou can view the slides here\n\n\n\n",
     "preview": {},
-    "last_modified": "2020-12-01T16:34:27-08:00",
+    "last_modified": "2020-12-01T16:38:27-08:00",
     "input_file": "lab-meeting-our-experience-with-seurat.utf8.md"
   },
   {
