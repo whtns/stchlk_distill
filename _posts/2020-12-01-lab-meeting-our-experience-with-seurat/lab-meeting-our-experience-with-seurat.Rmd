@@ -3,8 +3,8 @@ title: "Lab Meeting: Our Experience with Seurat"
 description: |
   A short description of the post.
 author:
-  - name: Nora Jones
-    url: https://example.com/norajones
+  - name: Kevin Stachelek
+    url: https://stchlk.rbind.io
 date: 12-01-2020
 output:
   distill::distill_article:
@@ -32,4 +32,4 @@ I tried to cover:
 2. How we applied Seurat and what advantages it has offered.
 3. Other ways forward with similar mature single cell analysis tools. 
 
-You can view the slides [here](/slides/20190412_lab_meeting/single_cell_seurat_lab_meeting.html)
+You can view the slides [here](/slides/single_cell_seurat_lab_meeting/single_cell_seurat_lab_meeting.html)

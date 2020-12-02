@@ -1,11 +1,13 @@
 ---
 title: "Methods for Single Cell SCNA Detection and Clustering"
 description: |
-  A short description of the post.
+  A Review
 author:
-  - name: Nora Jones
-    url: https://example.com/norajones
+  - name: Kevin Stachelek
+    url: https://stchlk.rbind.io
 date: 12-01-2020
+bibliography: "2019-01-04-review-of-methods-for-single-cell-scna-detection-and-clustering.bib"
+csl: "cell.csl"
 output:
   distill::distill_article:
     self_contained: false

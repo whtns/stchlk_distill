@@ -232,7 +232,7 @@ Finally I add another actionButton that triggers plotting make the app more pred
 actionButton("goButton", "Go!")
 ```
 
-Now that the ui is taken care of, the tricky part starts. I define a funtion, `lookup_transcripts_from_symbols`, that uses Stephen Turner's reliable [annotables](https://github.com/stephenturner/annotables) package. 
+Now that the ui is taken care of, the tricky part starts. I define a function, `lookup_transcripts_from_symbols`, that uses Stephen Turner's reliable [annotables](https://github.com/stephenturner/annotables) package. 
 
 For a given gene symbol supplied by the user, I then look up ensembl transcript ids and trigger using the actionButton  I just defined. 
 
