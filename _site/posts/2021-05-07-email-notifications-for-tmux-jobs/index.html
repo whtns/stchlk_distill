@@ -23,6 +23,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -53,73 +54,73 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #545454; font-weight: bold; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #a1024a; } /* BaseN */
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007faa; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #008000; } /* Char */
-code span.cn { color: #d91e18; } /* Constant */
-code span.co { color: #545454; } /* Comment */
-code span.cv { color: #545454; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #aa5d00; } /* DataType */
-code span.dv { color: #a1024a; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
 code span.ex { } /* Extension */
-code span.fl { color: #a1024a; } /* Float */
-code span.fu { color: #4254a7; } /* Function */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
-code span.in { color: #545454; font-weight: bold; } /* Information */
-code span.kw { color: #007faa; font-weight: bold; } /* Keyword */
-code span.op { color: #696969; } /* Operator */
-code span.ot { color: #007faa; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #008000; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #008000; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #008000; } /* VerbatimString */
-code span.wa { color: #545454; font-weight: bold; font-style: italic; } /* Warning */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-<title>Kevin Stachelek's Blog: Welcome to Kevin Stachelek's Blog</title>
+<title>Kevin Stachelek's Blog: Email notifications for tmux jobs</title>
 
-<meta property="description" itemprop="description" content="Welcome to our new blog, Kevin Stachelek&#39;s Blog. We hope you enjoy &#10;reading what we have to say!"/>
+<meta property="description" itemprop="description" content="A bash function for basic email notifications upon job completions in tmux."/>
 
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2020-12-01"/>
-<meta property="article:created" itemprop="dateCreated" content="2020-12-01"/>
-<meta name="article:author" content="Nora Jones"/>
+<meta property="article:published" itemprop="datePublished" content="2021-05-07"/>
+<meta property="article:created" itemprop="dateCreated" content="2021-05-07"/>
+<meta name="article:author" content="Kevin Stachelek"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Kevin Stachelek&#39;s Blog: Welcome to Kevin Stachelek&#39;s Blog"/>
+<meta property="og:title" content="Kevin Stachelek&#39;s Blog: Email notifications for tmux jobs"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="Welcome to our new blog, Kevin Stachelek&#39;s Blog. We hope you enjoy &#10;reading what we have to say!"/>
+<meta property="og:description" content="A bash function for basic email notifications upon job completions in tmux."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Kevin Stachelek&#39;s Blog"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="Kevin Stachelek&#39;s Blog: Welcome to Kevin Stachelek&#39;s Blog"/>
-<meta property="twitter:description" content="Welcome to our new blog, Kevin Stachelek&#39;s Blog. We hope you enjoy &#10;reading what we have to say!"/>
+<meta property="twitter:title" content="Kevin Stachelek&#39;s Blog: Email notifications for tmux jobs"/>
+<meta property="twitter:description" content="A bash function for basic email notifications upon job completions in tmux."/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Welcome to Kevin Stachelek's Blog"]},{"type":"character","attributes":{},"value":["Welcome to our new blog, Kevin Stachelek's Blog. We hope you enjoy \nreading what we have to say!"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Nora Jones"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]},{"type":"character","attributes":{},"value":["Spacely Sprockets"]},{"type":"character","attributes":{},"value":["https://example.com/spacelysprokets"]}]}]},{"type":"character","attributes":{},"value":["12-01-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Email notifications for tmux jobs"]},{"type":"character","attributes":{},"value":["A bash function for basic email notifications upon job completions in tmux."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Kevin Stachelek"]},{"type":"character","attributes":{},"value":["https://stchlk.rbind.io"]}]}]},{"type":"character","attributes":{},"value":["05-07-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["email-notifications-for-tmux-jobs_files/anchor-4.2.2/anchor.min.js","email-notifications-for-tmux-jobs_files/bowser-1.9.3/bowser.min.js","email-notifications-for-tmux-jobs_files/distill-2.2.21/template.v2.js","email-notifications-for-tmux-jobs_files/header-attrs-2.7/header-attrs.js","email-notifications-for-tmux-jobs_files/jquery-1.11.3/jquery.min.js","email-notifications-for-tmux-jobs_files/popper-2.6.0/popper.min.js","email-notifications-for-tmux-jobs_files/tippy-6.2.7/tippy-bundle.umd.min.js","email-notifications-for-tmux-jobs_files/tippy-6.2.7/tippy-light-border.css","email-notifications-for-tmux-jobs_files/tippy-6.2.7/tippy.css","email-notifications-for-tmux-jobs_files/tippy-6.2.7/tippy.umd.min.js","email-notifications-for-tmux-jobs_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
-<meta name="distill:offset" content="../../../../../../.."/>
+<meta name="distill:offset" content="../.."/>
 
 <script type="application/javascript">
 
@@ -131,6 +132,7 @@ code span.wa { color: #545454; font-weight: bold; font-style: italic; } /* Warni
     var header = $('header').get(0);
     var headerHeight = header.offsetHeight;
     var headroom = new Headroom(header, {
+      tolerance: 5,
       onPin : function() {
         if (window.headroom_prevent_pin) {
           window.headroom_prevent_pin = false;
@@ -453,13 +455,20 @@ d-title {
   top: 0;
 }
 
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
 </style>
 
-<link href="../../../../../../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-<link href="../../../../../../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-<script src="../../../../../../../site_libs/headroom-0.9.4/headroom.min.js"></script>
-<script src="../../../../../../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-<script src="../../../../../../../site_libs/fuse-6.4.1/fuse.min.js"></script>
+<script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+<script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
 
 <script type="application/javascript">
 
@@ -478,22 +487,19 @@ function offsetURL(url) {
   return offset ? offset + '/' + url : url;
 }
 
-function createIndex() {
-  var options = {
-    keys: [
-      "title",
-      "categories",
-      "description",
-      "contents"
-    ]
-  };
-  return new window.Fuse([],options);
-}
-
 function createFuseIndex() {
 
   // create fuse index
-  var options = { keys: ["title", "description", "contents"] };
+  var options = {
+    keys: [
+      { name: 'title', weight: 20 },
+      { name: 'categories', weight: 15 },
+      { name: 'description', weight: 10 },
+      { name: 'contents', weight: 5 },
+    ],
+    ignoreLocation: true,
+    threshold: 0
+  };
   var fuse = new window.Fuse([], options);
 
   // fetch the main search.json
@@ -561,29 +567,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             shouldSort: true,
             minMatchCharLength: 2,
             limit: 10,
-            keys: [
-              { name: 'title', weight: 20 },
-              { name: 'categories', weight: 15 },
-              { name: 'description', weight: 10 },
-              { name: 'contents', weight: 5 },
-            ],
           };
           var results = fuse.search(query, searchOptions);
           callback(results
             .map(function(result) { return result.item; })
-            .filter(function(item) { return !!item.description; })
           );
         },
         templates: {
           suggestion: function(suggestion) {
+            var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+              ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+              : '';
             var html = `
               <div class="search-item">
                 <h3>${suggestion.title}</h3>
                 <div class="search-item-description">
-                  ${suggestion.description}
+                  ${suggestion.description || ''}
                 </div>
                 <div class="search-item-preview">
-                  <img src="${suggestion.preview ? offsetURL(suggestion.preview) : ''}"</img>
+                  ${img}
                 </div>
               </div>
             `;
@@ -606,6 +608,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 
 <style type="text/css">
+
+.nav-search {
+  font-size: x-small;
+}
 
 /* Algolioa Autocomplete */
 
@@ -681,6 +687,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 }
 
 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+  font-size: 1rem;
   margin-block-start: 0;
   margin-block-end: 5px;
 }
@@ -864,7 +871,7 @@ d-article pre code {
 d-article pre,
 d-article div.sourceCode,
 d-article div.sourceCode pre {
-  overflow: hidden;
+  overflow: auto;
 }
 
 d-article div.sourceCode {
@@ -906,6 +913,11 @@ d-article pre a {
 d-article pre a:hover {
   border-bottom: none;
   text-decoration: underline;
+}
+
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
 }
 
 @media(min-width: 768px) {
@@ -1062,6 +1074,17 @@ d-article .citation {
 
 div.hanging-indent{
   margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
 }
 
 
@@ -1729,7 +1752,7 @@ function init_distill() {
     var layout = $(this).attr('data-layout');
 
     // apply layout to markdown level block elements
-    var elements = $(this).children().not('div.sourceCode, pre, script');
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
     elements.each(function(i, el) {
       var layout_div = $('<div class="' + layout + '"></div>');
       if (layout_div.hasClass('shaded')) {
@@ -1844,6 +1867,20 @@ function init_distill() {
     // move appendix-bottom entries to the bottom
     $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
     $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
 
     // clear polling timer
     clearInterval(tid);
@@ -2004,12 +2041,16 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!--/radix_placeholder_distill-->
-  <script src="../../../../../../../site_libs/header-attrs-2.5/header-attrs.js"></script>
-  <script src="../../../../../../../site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <script src="../../../../../../../site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="../../../../../../../site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="../../../../../../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="../../../../../../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="../../site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
 <!--/radix_placeholder_site_in_header-->
 
@@ -2021,7 +2062,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Welcome to Kevin Stachelek's Blog","description":"Welcome to our new blog, Kevin Stachelek's Blog. We hope you enjoy \nreading what we have to say!","authors":[{"author":"Nora Jones","authorURL":"https://example.com/norajones","affiliation":"Spacely Sprockets","affiliationURL":"https://example.com/spacelysprokets","orcidID":""}],"publishedDate":"2020-12-01T00:00:00.000-08:00","citationText":"Jones, 2020"}
+{"title":"Email notifications for tmux jobs","description":"A bash function for basic email notifications upon job completions in tmux.","authors":[{"author":"Kevin Stachelek","authorURL":"https://stchlk.rbind.io","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-05-07T00:00:00.000+00:00","citationText":"Stachelek, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2029,12 +2070,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
-<a href="../../../../../../../index.html" class="title">Kevin Stachelek's Blog</a>
+<a href="../../index.html" class="title">Kevin Stachelek's Blog</a>
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
-<a href="../../../../../../../index.html">Home</a>
-<a href="../../../../../../../about.html">About</a>
+<a href="../../index.html">Home</a>
+<a href="../../about.html">About</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2044,20 +2085,48 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Welcome to Kevin Stachelek’s Blog</h1>
+<h1>Email notifications for tmux jobs</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Welcome to our new blog, Kevin Stachelek’s Blog. We hope you enjoy reading what we have to say!</p></p>
+<p><p>A bash function for basic email notifications upon job completions in tmux.</p></p>
 </div>
 
 <div class="d-byline">
-  Nora Jones <a href="https://example.com/norajones" class="uri">https://example.com/norajones</a> (Spacely Sprockets)<a href="https://example.com/spacelysprokets" class="uri">https://example.com/spacelysprokets</a>
+  Kevin Stachelek <a href="https://stchlk.rbind.io" class="uri">https://stchlk.rbind.io</a> 
   
-<br/>12-01-2020
+<br/>05-07-2021
 </div>
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>I use rstudio-server on our laboratory ubuntu server to run most analyses. Understandably, information services at my workplace is quite restrictive when it comes to remote access. I am only able to access resources while off-campus via a windows virtual desktop. It’s fortunate that rstudio server is accessible on our internal network via a simple web browser. This makes resuming an analysis either from R in rstudio or in the rstudio terminal pane pretty straightforward.</p>
+<p>When it comes to managing long-running jobs, I have a few options. I can:</p>
+<ol type="1">
+<li>run R (or python) code in a simple rstudio session</li>
+<li>run a script or rmarkdown doc in the rstudio jobs pane</li>
+<li>run a script in the terminal.</li>
+</ol>
+<p>Major drawbacks of these options are that I struggle to run complex workflows via <a href="https://snakemake.readthedocs.io/en/stable/">snakemake</a> or <a href="https://www.nextflow.io/">nextflow</a> and struggle to quickly configure conda environments in rstudio. I am also unable to easily switch between projects inside rstudio once I’ve started any long-running code.</p>
+<p><a href="https://github.com/tmux/tmux">tmux</a> solves these problems. Like <a href="https://www.gnu.org/software/screen/">screen</a>, tmux allows the detachment and management of multiple terminals. The only thing left on my wish-list is some kind of notification when a job has finished successfully or in error. I explored a few tmux config options, so it’s possible there are built-in options that would allow this. But the simplest solution I’ve found so far is a basic bash function.</p>
+<pre><code>#function to send email when tmux job finishes
+function tmuxmail {
+    if [ $? == 1 ] 
+      then
+        tmux_session=$(tmux display-message -p &quot;#S&quot;)
+        echo -e &quot;Subject:failure\n$tmux_sesssion&quot; | sendmail -t username@gmail.com
+      else
+        tmux_session=$(tmux display-message -p &quot;#S&quot;)
+        echo -e &quot;Subject:success!\n$tmux_session&quot; | sendmail -t username@gmail.com
+    fi  
+}
+export -f tmuxmail</code></pre>
+<p>I add this function to my <code>.bashrc</code> and then can easily add a notification for a single long-running terminal command or when running a workflow.</p>
+<p>To walk through this function, <code>$?</code> refers to the returned status code of any command in bash. It’s useful here as a way of checking the success or failure of the preceding command or script. <code>tmux display-message -p "#S"</code> is a command substitution that returns the name of the tmux session. <code>sendmail</code> is used to actually send the email. Finally, <code>export -f tmuxmail</code> makes the function available in any shell. You’ll have to configure a mail server in your system to allow you to send emails. I’m using <code>sendmail</code> above.</p>
+<p>With this function it is simple to get the status of any longrunning command or workflow execution. This way, I can follow up on some analysis on the same night it might finish or quickly adjust code in a failed script without having to wait until the next morning or wasting lots of energy task-switching.</p>
+<h3 id="with-any-arbitrary-command">with any arbitrary command</h3>
+<p><code>echo "hello world!"; tmuxmail</code></p>
+<h3 id="with-snakemake">with snakemake</h3>
+<p><code>snakemake -j 4 --use-conda; tmuxmail</code></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -5,15 +5,15 @@
       "title": "About this blog",
       "description": "Some additional details about the blog",
       "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2020-12-01T15:34:06-08:00"
+      "contents": "\nI’m a PhD student in the PIBBS program at the University of Southern California (USC).\nI’m also a member of the Cobrinik laboratory at Children’s Hospital Los Angeles.\nI’m interested in cancer biology and genomics, especially single cell sequencing. I’m an enthusiastic R user and bioinformatics student. `\n\n\n\n",
+      "last_modified": "2021-05-08T14:40:53-07:00"
     },
     {
       "path": "index.html",
       "title": "Kevin Stachelek's Blog",
       "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2020-12-01T15:34:07-08:00"
+      "contents": "\n\n<img src=\"images/chinatown_portrait.jpg\">\n\n\n\n\n",
+      "last_modified": "2021-05-08T14:40:54-07:00"
     }
   ],
   "collections": ["posts/posts.json"]
