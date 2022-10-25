@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "I'm a PhD student in the [PIBBS](https://keck.usc.edu/pibbs/) program at the University of Southern California (USC). ",
+      "description": "I'm also a member of the [Cobrinik](https://www.chla.org/research/cobrinik-laboratory) laboratory at Children's Hospital Los Angeles. ",
+      "author": [],
+      "contents": "\nI’m interested in cancer biology and genomics, especially single cell\nsequencing. I’m an enthusiastic R user and bioinformatics student.\n\n\n\n",
+      "last_modified": "2022-10-24T11:01:13-07:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Kevin Stachelek's Blog",
+      "author": [],
+      "contents": "\n\n<img src=\"images/chinatown_portrait.jpg\">\n\n\n\n\n",
+      "last_modified": "2022-10-24T11:01:13-07:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

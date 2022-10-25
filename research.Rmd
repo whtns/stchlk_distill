@@ -80,7 +80,7 @@ window.onload = function(){
 $(document).ready(function(){
 	
    // external links to new window
-    $('a[href^="http://"]').not('a[href*="https://robcavanaugh.com"]').attr('target','_blank');
+    $('a[href^="http://"]').not('a[href*="http://stchlk.rbind.io/"]').attr('target','_blank');
     
     // force PDF Files to open in new window
     $('a[href$=".pdf"]').attr('target', '_blank');
@@ -95,7 +95,7 @@ source("R/cv_printing_functions_website.r")
 
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/1B2gc55CwWn0QidoLk3aqWXFaKGFXqekKV94LVyY7Gug/edit?usp=sharing",  
+  data_location = "https://docs.google.com/spreadsheets/d/1IY5sQS_JlNAYvsmCaEVTNHl6Zl7dOuhY4ulfnAeBBJ0/edit?usp=sharing",  
   pdf_mode = 'false'
 )
 CV$entries_data$institution[CV$entries_data$institution=="N/A"] <- ""

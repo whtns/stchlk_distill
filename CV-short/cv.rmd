@@ -1,6 +1,6 @@
 ---
-title: "Rob Cavanaugh's CV"
-author: Rob Cavanaugh
+title: "Kevin Stachelek's CV"
+author: Kevin Stachelek
 date: "`r Sys.Date()`"
 params:
   pdf_mode:
@@ -24,7 +24,7 @@ source(here("CV-short", "cv_printing_functions.r"))
 
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/1B2gc55CwWn0QidoLk3aqWXFaKGFXqekKV94LVyY7Gug/edit?usp=sharing",  
+  data_location = "https://docs.google.com/spreadsheets/d/1IY5sQS_JlNAYvsmCaEVTNHl6Zl7dOuhY4ulfnAeBBJ0/edit?usp=sharing",  
   pdf_mode = params$pdf_mode
 )
 
@@ -47,9 +47,9 @@ Aside
 
 ```{r}
 # if(params$pdf_mode){
-#   cat("View this CV online with links at _https://github.com/rbcavanaugh/personal-website-distill/CV-short/raw/master/cv.html_")
+#   cat("View this CV online with links at _https://github.com/whtns/personal-website-distill/CV-short/raw/master/cv.html_")
 # } else {
-#   cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/rbcavanaugh/personal-website-distill/CV-short/raw/master/cv.pdf)")
+#   cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/whtns/personal-website-distill/CV-short/raw/master/cv.pdf)")
 # }
 ```
 
@@ -76,7 +76,7 @@ Disclaimer {#disclaimer}
 
 Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
 
-The source code is available [on github.com/nstrayer/cv](/Users/robcavanaugh/Documents/github-repos/personal-website-distill/CV-short).
+The source code is available [on github.com/nstrayer/cv](/Users/kevinstachelek/Documents/github-repos/personal-website-distill/CV-short).
 
 Last updated on `r Sys.Date()`.
 
@@ -85,7 +85,7 @@ Last updated on `r Sys.Date()`.
 Main
 ================================================================================
 
-Robert Cavanaugh {#title}
+Kevin Stachelek {#title}
 --------------------------------------------------------------------------------
 
 ```{r}

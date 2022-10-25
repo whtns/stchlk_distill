@@ -148,23 +148,3 @@ Teaching {data-icon=university}
 CV %<>% print_section('teaching', glue_template = "other")
 ```
 
-Professional Memberships {data-icon=certificate}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('certs', glue_template = "other")
-```
-
-Service {data-icon=certificate}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('service', glue_template = "other")
-```
-
-Media {data-icon=certificate}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('media', glue_template = "other")
-```

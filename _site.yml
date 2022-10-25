@@ -1,25 +1,23 @@
 name: "personal-website-distill"
-title: "Rob Cavanaugh | PhD Candidate"
+title: "Kevin Stachelek | PhD Candidate"
 favicon: images/mountain-solid.svg
 theme: theme_1.css
 description: |
- Personal website for Rob Cavanaugh M.S. CCC-SLP
+ Personal website for Kevin Stachelek M.S. 
 output_dir: "docs"
-base_url: https://robcavanaugh.com/
+base_url: http://stchlk.rbind.io/
 navbar:
   right:
     - text: "Home"
       href: index.html
     - text: "Research"
       href: research.html
-    # - text: "Posts"
-    #   href: posts.html
     - text: "Posts"
       href: posts.html
     - text: "Apps & Websites"
       href: shiny.html
     - text: "CV"
-      href: cv-cavanaugh.html
+      href: cv-stachelek.html
   search: false
 google_analytics: "UA-179425806-1"
 # cookie_consent:
