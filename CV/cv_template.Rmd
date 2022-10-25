@@ -17,7 +17,7 @@ Main
 Lijia Yu {#title}
 --------------------------------------------------------------------------------
 <hr>
-<!-- <div style="font-size:14px;padding:0px;margin:0px;">M.S. CCC-SLP</div>  -->
+<!-- <div style="font-size:14px;padding:0px;margin:0px;"></div>  -->
 <div id="intro">
 Title, Department
 <span style="font-size:0.9rem;">School, University</span>  

@@ -7,22 +7,22 @@
 
 library(here)
 # Knit the HTML version
-  rmarkdown::render("CV/cv-cavanaugh.rmd")
+  rmarkdown::render("CV/cv-stachelek.rmd")
   
-  file.copy(here("CV", "cv-cavanaugh.html"),
-              here("cv-cavanaugh.html"), overwrite = T)
+  file.copy(here("CV", "cv-stachelek.html"),
+              here("cv-stachelek.html"), overwrite = T)
  
 
 # Convert to PDF using Pagedown
-pagedown::chrome_print(input = "~/github-repos/rbcavanaugh.github.io/cv-cavanaugh.html",
-                       output = here::here("CV", "cv-cavanaugh.pdf"))
+pagedown::chrome_print(input = "/Users/kevinstachelek/rpkgs/stchlk_distill/cv-stachelek.html",
+                       output = here::here("CV", "cv-stachelek.pdf"))
 
-file.copy(here("CV", "cv-cavanaugh.pdf"),
-          here("cv-cavanaugh.pdf"), overwrite = T)
+file.copy(here("CV", "cv-stachelek.pdf"),
+          here("cv-stachelek.pdf"), overwrite = T)
 
 rmarkdown::render_site(encoding = 'UTF-8')
 
 
 # CUSTO
-# pagedown::chrome_print(input = "~/github-repos/rbcavanaugh.github.io/CV/cv-cavanaugh-custom.html",
-#                        output = here::here("CV", "cv-cavanaugh-custom.pdf"))
+# pagedown::chrome_print(input = "/Users/kevinstachelek/rpkgs/stchlk_distill/CV/cv-stachelek-custom.html",
+#                        output = here::here("CV", "cv-stachelek-custom.pdf"))

@@ -1,0 +1,35 @@
+---
+title: "Lab Meeting: Our Experience with Seurat"
+description: |
+  Experience with Seurat so far
+author:
+  - name: Kevin Stachelek
+    url: https://stchlk.rbind.io
+date: 12-01-2020
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+I presented at our weekly lab meeting last Friday and described our experiences with Seurat on our single cell data. 
+
+We have two projects ongoing: 
+
+- Transcriptional Response to Rb Loss in the Retinoblastoma Cell of Origin
+  Single Cell RNA Sequencing (scRNAseq)
+
+- Changes associated with retinal cone precursor development
+  Single Cell RNA Sequencing (scRNAseq)
+  
+I tried to cover:
+
+1. Our initial approaches to analyzing single cell data and why they fell short.
+2. How we applied Seurat and what advantages it has offered.
+3. Other ways forward with similar mature single cell analysis tools. 
+
+You can view the slides [here](slides/single_cell_seurat_lab_meeting.html)

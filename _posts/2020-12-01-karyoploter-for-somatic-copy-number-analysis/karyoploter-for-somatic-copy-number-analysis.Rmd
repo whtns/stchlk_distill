@@ -1,0 +1,77 @@
+---
+title: "Karyoploter for Somatic Copy Number Analysis"
+description: |
+  Copy Number Analysis
+author:
+  - name: Kevin Stachelek
+    url: https://stchlk.rbind.io
+date: 12-01-2020
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r, echo = F}
+library(here)
+```
+
+
+I have recently been using [Karyoploter](https://bernatgel.github.io/karyoploter_tutorial) for plotting somatic copy number alterations. 
+
+I started doing this so that I could visualize gains and losses over multiple samples in a heatmap format. I hope that developing skills plotting with karyoploter will allow me to better visualize genomic data in an R environment. 
+
+Unfortunately, in order to plot multiple samples I need to do some for-loop hackery. 
+
+First, I define a function that plots segment data for an individual sample, `plot_base_seg`. This includes the basic karyoploter function `kpPlotRegions`. I also define a counter variable, `tn` which will define spacing between samples.
+
+```{r eval=FALSE}
+plot_base_seg <- function(cov_granges, tn, genes_granges, kp, chr_select, ...){
+  tr.i <- 0.03
+  tr.o <- 0.045
+  kp <- kpDataBackground(kp, r0=tr.o*tn, r1=tr.o*tn+tr.i) %>%
+    kpAxis(ymin =-2, y = 6, cex = 0.5, r0=(tr.o*tn), r1=(tr.o*tn+tr.i)) %>% 
+    kpSegments(cov_granges, y0 = cov_granges$seg.mean, y1 = cov_granges$seg.mean, ymin=-5, ymax=5, r0=tr.o*tn, r1=tr.o*tn+tr.i) %>% 
+    kpPlotRegions(genes_granges, col="#FFAACC", r0=tr.o*tn, r1=tr.o*tn+tr.i) %>% 
+    kpText(genes_granges, chr=chrom(genes_granges), x=start(genes_granges), y=0,
+           ymin=-6, ymax=6, labels=genes_granges$gene, col="red",
+           pos=4, cex=0.5, r0=tr.o*tn, r1=tr.o*tn+tr.i) %>% 
+    kpText(chr=chr_select, x=10000000, y=0.2, r0=tr.o*tn, r1=tr.o*tn+tr.i, col="red", labels=unique(cov_granges$sample_id), cex=0.5)
+  
+}
+```
+
+
+Then, I create a second function, `plot_all_to_file` which iterates over a [grangeslist object](https://bioconductor.org/packages/release/bioc/vignettes/GenomicRanges/inst/doc/GenomicRangesIntroduction.html) of all samples, feeding each to `plot_base_seg` with [purrr](https://github.com/tidyverse/purrr) which outputs a pdf heatmap.  
+
+
+``` {r eval=FALSE}
+
+num_seg_granges <- seq(0, length(seg_granges)-1)
+plot_all_to_file <- function(raw_cov_list, file_name, gene_ranges, chr_select, ...) {
+  pdf(file_name)
+  plot.params <- getDefaultPlotParams(plot.type=1)
+  plot.params$ideogramheight <- 15
+  plot.params$data1height <- 500
+  plot.params$data1inmargin <- 5
+  plot.params$data1outmargin <- 10
+  plot.params$bottommargin <- 10
+  plot.params$topmargin <- 10
+  kp <- plotKaryotype(genome="hg19", plot.type = 1,plot.params = plot.params, labels.plotter = NULL, chromosomes = chr_select) %>% 
+    kpAddChromosomeNames(col="red")
+  map2(raw_cov_list, num_seg_granges, plot_base_seg, gene_ranges, kp, chr_select)
+  dev.off()
+}
+```
+
+```{r, eval = F, echo = F}
+knitr::include_graphics("/img/heatmap_SCNA.png")
+```
+
+![Karyoploter Heatmap](heatmap_SCNA.png)
+

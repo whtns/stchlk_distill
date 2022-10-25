@@ -1,6 +1,6 @@
 ---
-title: "Rob Cavanaugh's CV"
-author: Rob Cavanaugh
+title: "Kevin Stachelek's CV"
+author: Kevin Stachelek
 date: "`r Sys.Date()`"
 params:
   pdf_mode:
@@ -23,9 +23,11 @@ source("cv_printing_functions.r")
 
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/1B2gc55CwWn0QidoLk3aqWXFaKGFXqekKV94LVyY7Gug/edit?usp=sharing",  
+  data_location = "https://docs.google.com/spreadsheets/d/1IY5sQS_JlNAYvsmCaEVTNHl6Zl7dOuhY4ulfnAeBBJ0/edit?usp=sharing",  
   pdf_mode = params$pdf_mode
 )
+
+
 
 ```
 
@@ -95,7 +97,7 @@ Disclaimer {#disclaimer}
 
 ```{r}
 if(!params$pdf_mode){
-    cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/rbcavanaugh/personal-website-distill/raw/master/CV/cv.pdf)")
+    cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/whtns/stchlk_distill/raw/master/CV/cv.pdf)")
 }
 ```
 
@@ -108,9 +110,9 @@ CV generated using {RMarkdown}
 Main
 ================================================================================
 
-Robert Cavanaugh {#title}
+Kevin Stachelek {#title}
 --------------------------------------------------------------------------------
-<div style="font-size:14px;padding:0px;margin:0px;">M.S. CCC-SLP</div> 
+<div style="font-size:14px;padding:0px;margin:0px;"></div> 
 
 ```{r}
 # Note the special double pipe so we modify the CV object in place
@@ -136,24 +138,6 @@ CV %<>% print_section('positions')
 ```
 
 
-
-Clinical Training {data-icon=hospital data-concise=true}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('clinical')
-```
-
-
-Grant Support {data-icon=pen-alt}
---------------------------------------------------------------------------------
-
-
-```{r class.source="pubs"}
-CV %<>% print_section('grants', glue_template = "grant")
-```
-
-
 Publications {data-icon=file-alt}
 --------------------------------------------------------------------------------
 
@@ -166,21 +150,12 @@ CV %<>% print_section('publications', glue_template = "citation")
 Refereed Presentations {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
-
 ```{r}
 CV %<>% print_section('presentations', glue_template = "citation")
 ```
 
-Publications Under Review & Revision {data-icon=chalkboard-teacher}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('review', glue_template = "citation")
-```
-
 Teaching {data-icon=university}
 --------------------------------------------------------------------------------
-
 
 ```{r}
 CV %<>% print_section('teaching', glue_template = "other")
@@ -195,14 +170,6 @@ Honors and Awards {data-icon=award}
 CV %<>% print_section('honors', glue_template = "other")
 ```
 
-
-Certification, Licensure, Memberships, and Service {data-icon=certificate}
---------------------------------------------------------------------------------
-
-
-```{r}
-CV %<>% print_section('certs', glue_template = "other")
-```
 
 Software {data-icon=laptop}
 --------------------------------------------------------------------------------

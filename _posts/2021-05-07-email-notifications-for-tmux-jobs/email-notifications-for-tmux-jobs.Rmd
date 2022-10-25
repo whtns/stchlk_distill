@@ -1,0 +1,57 @@
+---
+title: "Email notifications for tmux jobs"
+description: |
+  A bash function for basic email notifications upon job completions in tmux.
+author:
+  - name: Kevin Stachelek
+    url: https://stchlk.rbind.io
+date: 05-07-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+I use rstudio-server on our laboratory ubuntu server to run most analyses.  Understandably, information services at my workplace is quite restrictive when it comes to remote access. I am only able to access resources while off-campus via a windows virtual desktop. It's fortunate that rstudio server is accessible on our internal network via a simple web browser. This makes resuming an analysis either from R in rstudio or in the rstudio terminal pane pretty straightforward.
+
+When it comes to managing long-running jobs, I have a few options. I can:
+
+1. run R (or python) code in a simple rstudio session
+2. run a script or rmarkdown doc in the rstudio jobs pane
+3. run a script in the terminal. 
+
+Major drawbacks of these options are that I struggle to run complex workflows via [snakemake](https://snakemake.readthedocs.io/en/stable/) or [nextflow](https://www.nextflow.io/) and struggle to quickly configure conda environments in rstudio. I am also unable to easily switch between projects inside rstudio once I've started any long-running code. 
+
+[tmux](https://github.com/tmux/tmux) solves these problems. Like [screen](https://www.gnu.org/software/screen/), tmux allows the detachment and management of multiple terminals. The only thing left on my wish-list is some kind of notification when a job has finished successfully or in error. I explored a few tmux config options, so it's possible there are built-in options that would allow this. But the simplest solution I've found so far is a basic bash function. 
+
+```
+#function to send email when tmux job finishes
+function tmuxmail {
+    if [ $? == 1 ] 
+      then
+        tmux_session=$(tmux display-message -p "#S")
+        echo -e "Subject:failure\n$tmux_sesssion" | sendmail -t username@gmail.com
+      else
+        tmux_session=$(tmux display-message -p "#S")
+        echo -e "Subject:success!\n$tmux_session" | sendmail -t username@gmail.com
+    fi  
+}
+export -f tmuxmail
+```
+
+I add this function to my `.bashrc` and then can easily add a notification for a single long-running terminal command or when running a workflow. 
+
+To walk through this function, `$?` refers to the returned status code of any command in bash. It's useful here as a way of checking the success or failure of the preceding command or script. `tmux display-message -p "#S"` is a command substitution that returns the name of the tmux session. `sendmail` is used to actually send the email. Finally, `export -f tmuxmail` makes the function available in any shell. You'll have to configure a mail server in your system to allow you to send emails. I'm using `sendmail` above. 
+
+With this function it is simple to get the status of any longrunning command or workflow execution. This way, I can follow up on some analysis on the same night it might finish or quickly adjust code in a failed script without having to wait until the next morning or wasting lots of energy task-switching. 
+
+### with any arbitrary command 
+`echo "hello world!"; tmuxmail`
+
+### with snakemake
+`snakemake -j 4 --use-conda; tmuxmail`
+

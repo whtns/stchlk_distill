@@ -1,6 +1,6 @@
 ---
-title: "Rob Cavanaugh's CV"
-author: Rob Cavanaugh
+title: "Kevin Stachelek's CV"
+author: Kevin Stachelek
 date: "`r Sys.Date()`"
 params:
   pdf_mode:
@@ -51,19 +51,19 @@ if(params$pdf_mode) {
 Main
 ================================================================================
 
-Robert Cavanaugh {#title}
+Kevin Stachelek {#title}
 --------------------------------------------------------------------------------
 <hr>
-<!-- <div style="font-size:14px;padding:0px;margin:0px;">M.S. CCC-SLP</div>  -->
+<!-- <div style="font-size:14px;padding:0px;margin:0px;"></div>  -->
 <div id="intro">
-Ph.D Candidate, Communication Sciences and Disorders  
-<span style="font-size:0.9rem;">School of Health and Rehabilitation Sciences, University of Pittsburgh</span>  
-`r fontawesome::fa("envelope")` rob.cavanaugh@pitt.edu `r knitr::asis_output("\U00B7")`
-`r fontawesome::fa("globe")` [robcavanaugh.com](https://robcavanaugh.com) `r knitr::asis_output("\U00B7")`
+Ph.D Candidate, Cancer Biology and Genomics  
+<span style="font-size:0.9rem;">Keck School of Medicine, University of Southern California</span>  
+`r fontawesome::fa("envelope")` stachele@usc.edu `r knitr::asis_output("\U00B7")`
+`r fontawesome::fa("globe")` [stchlk.rbind.io](http://stchlk.rbind.io) `r knitr::asis_output("\U00B7")`
 `r fontawesome::fa("graduation-cap")` [Google Scholar](https://scholar.google.com/citations?user=7pMLCJsAAAAJ&hl=en)  
-`r fontawesome::fa("orcid")` [orcidID](https://orcid.org/0000-0002-2114-6565) `r knitr::asis_output("\U00B7")` 
-`r fontawesome::fa("github")` [Github](https://github.com/rbcavanaugh) `r knitr::asis_output("\U00B7")` 
-`r fontawesome::fa("github")` [Twitter](https://twitter.com/Littlejohnsband)  
+`r fontawesome::fa("orcid")` [orcidID](https://orcid.org/0000-0003-2085-695X) `r knitr::asis_output("\U00B7")` 
+`r fontawesome::fa("github")` [Github](https://github.com/whtns) `r knitr::asis_output("\U00B7")` 
+`r fontawesome::fa("github")` [Twitter](https://twitter.com/stchlk)  
 <em style="font-size:0.8rem;">Last updated on `r Sys.Date()`</em>
 </div>
 

@@ -1,0 +1,40 @@
+---
+title: "Journal Club Notes on Chromatin Accessibility"
+description: |
+  Notes from Journal Club
+author:
+  - name: Kevin Stachelek
+    url: https://stchlk.rbind.io
+date: 12-01-2020
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+I'm reading an article on 
+
+[Dynamic interplay between enhancer–promoter topology and gene activity](https://doi.org/10.1038/s41588-018-0175-z)
+
+It is about chromatin accessiblity. It seems to describe a system for measuring the proximity of promoter-enhancer pairs. 
+
+So far I have only covered the setup of the system and a few control experiments designed to assess it's reliability.
+
+I started reading another paper on the advice of my PI:
+
+[Ubiquitously transcribed genes use
+alternative polyadenylation to achieve
+tissue-specific expression](http://www.genesdev.org/cgi/doi/10.1101/gad.229328.113)
+
+I'm not too familiar with polyadenylation as a regulatory mechanism. 
+
+They claim that more than half of human genes use alternative cleavage and polyadenylation to generate mRNA transcripts that differ in the lengths of their 3' untranslated regions 
+
+Interestingly, they claim that multi-UTR genes mostly change 3' UTR isoform ratios to achieve tissue specificity. 
+
+So, instead of finding global shifts in 3' UTR length during transformation and differentiation, they identify tissue -specific groups of multi-UTR genes that change their 3' UTR ratios. 
+

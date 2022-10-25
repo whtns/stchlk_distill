@@ -1,0 +1,64 @@
+---
+title: "Genome browsers for Private scRNAseq Data"
+description: |
+  How do you set up a private genome browser?
+author:
+  - name: Kevin Stachelek
+    url: https://stchlk.rbind.io
+date: 12-01-2020
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+For the past several years we have worked with single cell RNA seq data to understand the pediatric retinal cancer retinoblastoma and retinal development more generally. 
+
+Single cell sequencing methods can be divided based on the capacity for breadth or depth of sequencing for individual cells. The field moves very quickly. 
+
+![[@svenssonExponentialScalingSinglecell2018a]](/post/2020-02-08-genome-browsers-for-scrnaseq-alignment_files/svensson_plot.jpg)
+
+
+Around 2014 (when we began working with scRNAseq data) the Smart-Seq 2 protocol was developed. The method relies on a [template-switch oligo](https://liorpachter.wordpress.com/2019/02/19/introduction-to-single-cell-rna-seq-technologies/) to achieve full-length sequencing of transcripts. 
+
+Our processing of the resulting data consists of a modified [snakemake](https://snakemake.readthedocs.io/en/stable/) workflow developed for single cell RNA seq data [@orjuelaARMORAutomatedReproducible2019]. I've modified this workflow to include our favorite tools 
+
+![Our workflow](/post/2020-02-08-genome-browsers-for-scrnaseq-alignment_files/dag.png)
+
+As you might see, our workflow includes read alignment using STAR. If our ultimate goal is to quanitfy the expression of all transcripts in the cell, we first need a way to assign reads to known (or unknown transcripts). This can be accomplished either by alignment to a reference genome (alignment-based methods) or comparison to a reference transcriptome (alignment-free methods). This second approach is exemplified by Salmon and Kallisto and is simply a comparison of each read sequence to all known transcript sequences. 
+
+With the entire universe of human RNA sequencing data, reference transcriptomes are extremely high quality and there are sophisticated analyses demonstrating the superiority of alignment-free methods. In addition, these methods are __much__ faster than alignment-based methods. The major drawback of these methods is that unannotated transcripts cannot be captured, because they are, by definition, not in the reference transcriptome. 
+
+They have gained widespread adoption especially with droplet-based scRNAseq approaches where full  transcript sequences are not
+
+As we work with Smart-seq2 data that yields complete transcript sequences, we are able to discover unannotated transcripts differential isofrom usage. We therefore rely on alignment-based transcript quantitation. The problem I face I'm facing is how to analyze this differential isoform usage. 
+
+I am interested in rigorous approaches such as [IsoformSwitchAnalyzeR](https://bioconductor.org/packages/release/bioc/html/IsoformSwitchAnalyzeR.html) but haven't gotten that up and running yet. Our more immediate problem is simply quantifying differential expression and all the other clever analyses typical in scRNAseq (pseudotime, rna velocity, etc.). And I'd like not to be led astray by unusual isoforms in the process. 
+
+The first step in any project is exploratory data analysis. To make EDA possible with differential transcript usage, we need a robust genome browser that can display alignment tracks for 100s to 1000s of cells with quick uptime and private storage.
+
+My ideal scenario would be that I pass to a script: 1) a directory of files 2) a reference genome 3) a csv with cell metadata. Then I'd like to be given an interactive browser with a stable url and the capacity to display hundreds of cells in groups corresponding to the cell metadata. It would also be nice If I could get a meta-track that would display an alignment which summarizes coverage for all cells matching a given condition, e.g. treated/untreated, day 1,2,3, etc.  
+
+Our computing setup is two ubuntu linux servers behind an institutional firewall. I've looked at three options and am open to suggestions. 
+
+## 1. [JBrowse](https://jbrowse.org/)
+
+This was my first approach. Installation was relatively painless but configuration was pretty difficult for me. Jbrowse offers two methods of [configuring browser tracks](https://jbrowse.org/docs/configuration_file_formats.html), JSON or .conf (a flat text file). I was previously pretty unfamiliar with json so opted first for .conf configuration. It began to seem that the ability to specify track metadata from an external file would only be possible using the json format, so I wrote a [python script](https://github.com/whtns/ARMOR/blob/master/scripts/format_tracklist_json.py) to configure the appropriate json configuration file from a directory of bigwig files. This is currently the lowest impact solution I've found. 
+
+## 2. [UCSC](https://genome.ucsc.edu/goldenpath/help/gbic.html)
+
+The UCSC genome browser occupies a special place in the hearts of many scientists. When making a solution for bench-side lab members it is sometimes difficult to argue with preferences. I was reluctant to use UCSC genome browser to host our data because the accumulation of computational biology methods, the sometimes difficult documentation, and our __preference__ for ensembl references. 
+
+Additionally, because we are operating behind a strict institutional firewall I don't have access to a publicly available webserver. This makes hosting a [custom trackhub](https://genome.ucsc.edu/goldenPath/help/hgTrackHubHelp.html) out of the question. I was pleased to see that the UCSC genome browser in a cloud (UCSC GBIC) made the installation process quite painless. And I was hopeful that we might host our own data locally while operating a UCSC instanace with reference data from the cloud. This dream still seems just out of reach, unfortunately. 
+
+## 3. [IGV.js](https://github.com/igvteam/igv.js/)
+
+
+
+
+# References
+

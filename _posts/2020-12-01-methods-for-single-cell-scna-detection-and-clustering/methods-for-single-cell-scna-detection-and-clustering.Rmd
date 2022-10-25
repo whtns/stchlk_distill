@@ -1,0 +1,84 @@
+---
+title: "Methods for Single Cell SCNA Detection and Clustering"
+description: |
+  A Review
+author:
+  - name: Kevin Stachelek
+    url: https://stchlk.rbind.io
+date: 12-01-2020
+bibliography: "2019-01-04-review-of-methods-for-single-cell-scna-detection-and-clustering.bib"
+csl: "cell.csl"
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# The issue 
+
+I'm working on somatic copy number alterations (SCNA) in single cells. Lots of interesting work on this topic is being done by the Kuhn/Hicks lab at USC. The problem I'm focusing on here is clustering of SCNA in single cells. 
+
+# The Software
+
+I've so far found three software pacakages for SCNA calling and sample clustering, two come from two labs at Cold Spring Harbor Laboratory (CSHL), with some overlapping personnel. 
+
+1.  [Ginkgo](http://qb.cshl.edu/ginkgo/?q=/EGgIcLtaAcUEbqb1VaIa) [@Garvin2015]
+2.  [SCclust](https://github.com/KrasnitzLab/SCclust)
+
+Ginkgo comes as an integrated shiny app hosted at CSHL while SCclust is under active development and seems to require extensive configuration and installation.
+
+The third comes as a bioconductor package and integrates karyotype heterogeneity. 
+
+3.  [Aneufinder](https://bioconductor.org/packages/release/bioc/html/AneuFinder.html) [@Bakker2016]
+
+Each of them seem to proceed from .bam/.bed input files and yield SCNA segmentation profiles and sample dendrograms on a range of metrics (euclidean distance, correlation, etc.)
+
+# The Problem
+After trying some of our data in Ginkgo, my PI commented that an unbiased comparison between SCNA profiles for the purposes of building a tree might be deceptive because correlation of some features might be due to similar selective pressures and disease processes rather than shared inheritance between cells.
+
+Some background, it is thought that tumor evolution occurs through clonal evolution. That is, minor changes in the genome of a given cell result in proliferation of that cell and formation of a clone. This is thought to lie behind chemotherapy resistance and relapse. Chemotherapy kills all but a few resistant cells which then grow out as a clone and are refractory to future chemotherapy.
+
+In retinoblastoma as in many cancers, stereotypical SCNA profiles are common. The functional significance of these changes is poorly understood, but it is reasonable to think that certain changes confer a survival advantage. It is therefore reasonable to think that SCNAs might arise in overlapping regions in two clones despite there being no direct relation between the two. If you're trying to infer clones from SCNA data then, it's not enough to look at overall correlation between two cells. 
+
+You might be able to distinguish clones on the basis of the breakpoints of SCNAs, as it would be much less likely that two separate clones could develop SCNA in identical chromosomal regions. 
+
+I don't understand what clustering method would take that into account. The specifics of clustering is a bit of blind-spot for me. I understand the principles behind different methods (complete, average, ward, etc.) but I'm not clear how to account for this seeming limitation. Doubtless it's a common worry in application of clustering to many datasets. 
+
+
+# So Which To Use?
+
+I'm also still uncertain the best implementation of single cell SCNA analysis to run. Can either method address this issue?
+
+## Ginkgo 
+Ginkgo seems to be an implementation of the method laid out in @Baslan2015
+
+I've found several citations for Ginkgo and/or @Baslan2015. 
+
+1. One comparison between SCNA called from single cell RNA sequencing data [@Poirion2018].
+2. Another method for calling SCNA from single cell RNA sequencing data [@Patel2014]. 
+3. An application for deriving estimates of chromosomal instability from single cell SCNA [@Greene2016]
+4. A method for improved haplotype phasing by relying on whole genome amplification data [@Satas2018]
+5. An application of single cell SCNA for parafin-embedded samples [@Martelotto2017]
+6. A method of whole genome amplification proposed to reduce error and improve precision of single cell SCNA [@Chen2017]
+
+## Aneufinder
+
+I've found some for Aneufinder:
+
+1. A method for improved haplotype phasing by relying on whole genome amplification data [@Satas2018]
+
+## SCclust
+
+SCclust isn't published yet, though the PI responsible seems to be deeply involved in single cell SCNA work. Information I've found relating to SCclust includes:
+
+1. CORE called "A Software Tool for Delineating Regions of Recurrent DNA Copy Number Alteration in Cancer" [@Sun2019]
+
+
+# References
+
+
+
