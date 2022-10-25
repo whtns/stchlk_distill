@@ -14,7 +14,7 @@ library(here)
  
 
 # Convert to PDF using Pagedown
-pagedown::chrome_print(input = "/Users/kevinstachelek/rpkgs/stachelek_distill/cv-stachelek.html",
+pagedown::chrome_print(input = "/Users/kevinstachelek/rpkgs/stchlk_distill/cv-stachelek.html",
                        output = here::here("CV", "cv-stachelek.pdf"))
 
 file.copy(here("CV", "cv-stachelek.pdf"),
@@ -24,5 +24,5 @@ rmarkdown::render_site(encoding = 'UTF-8')
 
 
 # CUSTO
-# pagedown::chrome_print(input = "/Users/kevinstachelek/rpkgs/stachelek_distill/CV/cv-stachelek-custom.html",
+# pagedown::chrome_print(input = "/Users/kevinstachelek/rpkgs/stchlk_distill/CV/cv-stachelek-custom.html",
 #                        output = here::here("CV", "cv-stachelek-custom.pdf"))

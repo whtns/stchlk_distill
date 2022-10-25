@@ -23,7 +23,7 @@ source("cv_printing_functions.r")
 
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/1B2gc55CwWn0QidoLk3aqWXFaKGFXqekKV94LVyY7Gug/edit?usp=sharing",  
+  data_location = "https://docs.google.com/spreadsheets/d/1IY5sQS_JlNAYvsmCaEVTNHl6Zl7dOuhY4ulfnAeBBJ0/edit?usp=sharing",  
   pdf_mode = params$pdf_mode
 )
 
@@ -56,9 +56,9 @@ Main
 Kevin Stachelek {#title}
 --------------------------------------------------------------------------------
 <hr>
-<!-- <div style="font-size:14px;padding:0px;margin:0px;">M.S. CCC-SLP</div> -->
+<!-- <div style="font-size:14px;padding:0px;margin:0px;"></div> -->
 <div id="intro">
-M.S. CCC-SLP `r knitr::asis_output("\U00B7")` Ph.D Candidate, University of Southern California<br>
+ `r knitr::asis_output("\U00B7")` Ph.D Candidate, University of Southern California<br>
 <!-- <span style="font-size:0.9rem;">Keck School of Medicine, University of Southern California</span>   -->
 `r fontawesome::fa("envelope")` stachele@usc.edu `r knitr::asis_output("\U00B7")`
 `r fontawesome::fa("globe")` [stchlk.rbind.io](http://stchlk.rbind.io) `r knitr::asis_output("\U00B7")`  

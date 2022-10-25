@@ -22,7 +22,7 @@ source("cv_printing_functions.r")
 
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/1B2gc55CwWn0QidoLk3aqWXFaKGFXqekKV94LVyY7Gug/edit?usp=sharing",  
+  data_location = "https://docs.google.com/spreadsheets/d/1IY5sQS_JlNAYvsmCaEVTNHl6Zl7dOuhY4ulfnAeBBJ0/edit?usp=sharing",  
   pdf_mode = params$pdf_mode
 )
 
@@ -54,9 +54,9 @@ datadrivencv::build_network_logo(CV$entries_data)
 
 ```{r}
 if(params$pdf_mode){
-  cat("View this CV online with links at _https://github.com/whtns/stachelek_distill/CV-short/raw/master/cv.html_")
+  cat("View this CV online with links at _https://github.com/whtns/stchlk_distill/CV-short/raw/master/cv.html_")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/whtns/stachelek_distill/CV-short/raw/master/cv.pdf)")
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/whtns/stchlk_distill/CV-short/raw/master/cv.pdf)")
 }
 ```
 
@@ -83,7 +83,7 @@ Disclaimer {#disclaimer}
 
 Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
 
-The source code is available [on github.com/nstrayer/cv](/Users/kevinstachelek/rpkgs/stachelek_distill/CV-short).
+The source code is available [on github.com/nstrayer/cv](/Users/kevinstachelek/rpkgs/stchlk_distill/CV-short).
 
 Last updated on `r Sys.Date()`.
 

@@ -54,10 +54,10 @@ Main
 Kevin Stachelek {#title}
 --------------------------------------------------------------------------------
 <hr>
-<!-- <div style="font-size:14px;padding:0px;margin:0px;">M.S. CCC-SLP</div>  -->
+<!-- <div style="font-size:14px;padding:0px;margin:0px;"></div>  -->
 <div id="intro">
-Ph.D Candidate, Communication Sciences and Disorders  
-<span style="font-size:0.9rem;">School of Health and Rehabilitation Sciences, University of Pittsburgh</span>  
+Ph.D Candidate, Cancer Biology and Genomics  
+<span style="font-size:0.9rem;">Keck School of Medicine, University of Southern California</span>  
 `r fontawesome::fa("envelope")` stachele@usc.edu `r knitr::asis_output("\U00B7")`
 `r fontawesome::fa("globe")` [stchlk.rbind.io](http://stchlk.rbind.io) `r knitr::asis_output("\U00B7")`
 `r fontawesome::fa("graduation-cap")` [Google Scholar](https://scholar.google.com/citations?user=7pMLCJsAAAAJ&hl=en)  

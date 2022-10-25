@@ -23,7 +23,7 @@ source("cv_printing_functions.r")
 
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/1B2gc55CwWn0QidoLk3aqWXFaKGFXqekKV94LVyY7Gug/edit?usp=sharing",  
+  data_location = "https://docs.google.com/spreadsheets/d/1IY5sQS_JlNAYvsmCaEVTNHl6Zl7dOuhY4ulfnAeBBJ0/edit?usp=sharing",  
   pdf_mode = params$pdf_mode
 )
 
@@ -56,10 +56,10 @@ Main
 Kevin Stachelek {#title}
 --------------------------------------------------------------------------------
 <hr>
-<!-- <div style="font-size:14px;padding:0px;margin:0px;">M.S. CCC-SLP</div> -->
+<!-- <div style="font-size:14px;padding:0px;margin:0px;"></div> -->
 <div id="intro">
-M.S. CCC-SLP `r knitr::asis_output("\U00B7")` Ph.D Candidate, University of Pittsburgh<br>
-<!-- <span style="font-size:0.9rem;">School of Health and Rehabilitation Sciences, University of Pittsburgh</span>   -->
+ `r knitr::asis_output("\U00B7")` Ph.D Candidate, University of Southern California<br>
+<!-- <span style="font-size:0.9rem;">Keck School of Medicine, University of Southern California</span>   -->
 `r fontawesome::fa("envelope")` stachele@usc.edu `r knitr::asis_output("\U00B7")`
 `r fontawesome::fa("globe")` [stchlk.rbind.io](http://stchlk.rbind.io) `r knitr::asis_output("\U00B7")`  
 `r fontawesome::fa("orcid")` [orcidID](https://orcid.org/0000-0003-2085-695X) `r knitr::asis_output("\U00B7")` 
@@ -77,9 +77,9 @@ M.S. CCC-SLP `r knitr::asis_output("\U00B7")` Ph.D Candidate, University of Pitt
 <!-- ``` -->
 <!-- </div> -->
 
-**Objective:** Seeking quantitative and analytics focused positions in health-related research fields, specifically focused on health services research, health disparities, and health outcomes.
+**Objective:** 
 
-**Summary:** I'm a 5th year PhD student and certified speech-language pathologist. To date, my research has focused on improving the effectiveness of aphasia rehabilitation services from two perspectives: (1) specifying the active ingredients of aphasia treatments and (2) accelerating the clinical implementation of research in clinical practice settings. To achieve these goals, I have pursued training in psycholinguistic treatment theory, quantitative methods and statistical programming, health services research, and implementation science. I’m also passionate about sharing and promoting open science practices. 
+**Summary:** 
 
 Education {data-icon=graduation-cap }
 --------------------------------------------------------------------------------
@@ -156,25 +156,4 @@ Teaching {data-icon=university}
 
 ```{r}
 CV %<>% print_section('teaching', glue_template = "other")
-```
-
-Professional Memberships {data-icon=certificate}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('certs', glue_template = "other")
-```
-
-Service {data-icon=certificate}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('service', glue_template = "other")
-```
-
-Media {data-icon=certificate}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('media', glue_template = "other")
 ```
