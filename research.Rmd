@@ -128,7 +128,7 @@ DT::datatable(t,
               escape = FALSE,
               rownames = FALSE,
               class="compact hover",
-              option = list(pageLength = 5, lengthChange = FALSE, searching = FALSE, info = FALSE))
+              option = list(pageLength = 10, lengthChange = FALSE, searching = FALSE, info = FALSE))
 
 ```
 
