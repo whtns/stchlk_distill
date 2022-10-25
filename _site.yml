@@ -19,7 +19,6 @@ navbar:
     - text: "CV"
       href: cv-stachelek.html
   search: false
-google_analytics: "UA-179425806-1"
 # cookie_consent:
 #   style: simple
 #   type: express

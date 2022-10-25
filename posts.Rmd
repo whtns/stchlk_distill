@@ -1,8 +1,6 @@
 ---
-title: "Gallery of featured posts"
-listing:
-  posts:
-    - 2022-06-25-aphasia-access-awareness-survey
+title: "Posts"
+listing: posts
 ---
 
 

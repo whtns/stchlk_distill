@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Kevin Stachelek | PhD Candidate</title>
+    <link>http://stchlk.rbind.io/</link>
+    <atom:link href="http://stchlk.rbind.io/posts.xml" rel="self" type="application/rss+xml"/>
+    <description>Personal website for Kevin Stachelek M.S. 
+</description>
+    <image>
+      <title>Kevin Stachelek | PhD Candidate</title>
+      <url>http://stchlk.rbind.io/images/mountain-solid.svg</url>
+      <link>http://stchlk.rbind.io/</link>
+    </image>
+    <generator>Distill</generator>
+    <lastBuildDate>Fri, 07 May 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Email notifications for tmux jobs</title>
+      <dc:creator>Kevin Stachelek</dc:creator>
+      <link>http://stchlk.rbind.io/posts/2021-05-07-email-notifications-for-tmux-jobs</link>
+      <description>A bash function for basic email notifications upon job completions in tmux.</description>
+      <guid>http://stchlk.rbind.io/posts/2021-05-07-email-notifications-for-tmux-jobs</guid>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Genome browsers for Private scRNAseq Data</title>
+      <dc:creator>Kevin Stachelek</dc:creator>
+      <link>http://stchlk.rbind.io/posts/2020-12-01-genome-browsers-for-private-scrnaseq-data</link>
+      <description>How do you set up a private genome browser?</description>
+      <guid>http://stchlk.rbind.io/posts/2020-12-01-genome-browsers-for-private-scrnaseq-data</guid>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Journal Club Notes on Chromatin Accessibility</title>
+      <dc:creator>Kevin Stachelek</dc:creator>
+      <link>http://stchlk.rbind.io/posts/2020-12-01-journal-club-notes-on-chromatin-accessibility</link>
+      <description>Notes from Journal Club</description>
+      <guid>http://stchlk.rbind.io/posts/2020-12-01-journal-club-notes-on-chromatin-accessibility</guid>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Karyoploter for Somatic Copy Number Analysis</title>
+      <dc:creator>Kevin Stachelek</dc:creator>
+      <link>http://stchlk.rbind.io/posts/2020-12-01-karyoploter-for-somatic-copy-number-analysis</link>
+      <description>Copy Number Analysis</description>
+      <guid>http://stchlk.rbind.io/posts/2020-12-01-karyoploter-for-somatic-copy-number-analysis</guid>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Lab Meeting: Our Experience with Seurat</title>
+      <dc:creator>Kevin Stachelek</dc:creator>
+      <link>http://stchlk.rbind.io/posts/2020-12-01-lab-meeting-our-experience-with-seurat</link>
+      <description>Experience with Seurat so far</description>
+      <guid>http://stchlk.rbind.io/posts/2020-12-01-lab-meeting-our-experience-with-seurat</guid>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Methods for Single Cell SCNA Detection and Clustering</title>
+      <dc:creator>Kevin Stachelek</dc:creator>
+      <link>http://stchlk.rbind.io/posts/2020-12-01-methods-for-single-cell-scna-detection-and-clustering</link>
+      <description>A Review</description>
+      <guid>http://stchlk.rbind.io/posts/2020-12-01-methods-for-single-cell-scna-detection-and-clustering</guid>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
