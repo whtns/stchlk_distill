@@ -1,0 +1,104 @@
+[
+  {
+    "path": "posts/2021-05-07-email-notifications-for-tmux-jobs/",
+    "title": "Email notifications for tmux jobs",
+    "description": "A bash function for basic email notifications upon job completions in tmux.",
+    "author": [
+      {
+        "name": "Kevin Stachelek",
+        "url": "https://stchlk.rbind.io"
+      }
+    ],
+    "date": "2021-05-07",
+    "categories": [],
+    "contents": "\nI use rstudio-server on our laboratory ubuntu server to run most analyses. Understandably, information services at my workplace is quite restrictive when it comes to remote access. I am only able to access resources while off-campus via a windows virtual desktop. It’s fortunate that rstudio server is accessible on our internal network via a simple web browser. This makes resuming an analysis either from R in rstudio or in the rstudio terminal pane pretty straightforward.\nWhen it comes to managing long-running jobs, I have a few options. I can:\nrun R (or python) code in a simple rstudio session\nrun a script or rmarkdown doc in the rstudio jobs pane\nrun a script in the terminal.\nMajor drawbacks of these options are that I struggle to run complex workflows via snakemake or nextflow and struggle to quickly configure conda environments in rstudio. I am also unable to easily switch between projects inside rstudio once I’ve started any long-running code.\ntmux solves these problems. Like screen, tmux allows the detachment and management of multiple terminals. The only thing left on my wish-list is some kind of notification when a job has finished successfully or in error. I explored a few tmux config options, so it’s possible there are built-in options that would allow this. But the simplest solution I’ve found so far is a basic bash function.\n#function to send email when tmux job finishes\nfunction tmuxmail {\n    if [ $? == 1 ] \n      then\n        tmux_session=$(tmux display-message -p \"#S\")\n        echo -e \"Subject:failure\\n$tmux_sesssion\" | sendmail -t username@gmail.com\n      else\n        tmux_session=$(tmux display-message -p \"#S\")\n        echo -e \"Subject:success!\\n$tmux_session\" | sendmail -t username@gmail.com\n    fi  \n}\nexport -f tmuxmail\nI add this function to my .bashrc and then can easily add a notification for a single long-running terminal command or when running a workflow.\nTo walk through this function, $? refers to the returned status code of any command in bash. It’s useful here as a way of checking the success or failure of the preceding command or script. tmux display-message -p \"#S\" is a command substitution that returns the name of the tmux session. sendmail is used to actually send the email. Finally, export -f tmuxmail makes the function available in any shell. You’ll have to configure a mail server in your system to allow you to send emails. I’m using sendmail above.\nWith this function it is simple to get the status of any longrunning command or workflow execution. This way, I can follow up on some analysis on the same night it might finish or quickly adjust code in a failed script without having to wait until the next morning or wasting lots of energy task-switching.\nwith any arbitrary command\necho \"hello world!\"; tmuxmail\nwith snakemake\nsnakemake -j 4 --use-conda; tmuxmail\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-10-25T11:03:15-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2020-12-01-genome-browsers-for-private-scrnaseq-data/",
+    "title": "Genome browsers for Private scRNAseq Data",
+    "description": "How do you set up a private genome browser?",
+    "author": [
+      {
+        "name": "Kevin Stachelek",
+        "url": "https://stchlk.rbind.io"
+      }
+    ],
+    "date": "2020-12-01",
+    "categories": [],
+    "contents": "\nFor the past several years we have worked with single cell RNA seq data to understand the pediatric retinal cancer retinoblastoma and retinal development more generally.\nSingle cell sequencing methods can be divided based on the capacity for breadth or depth of sequencing for individual cells. The field moves very quickly.\n[@svenssonExponentialScalingSinglecell2018a]Around 2014 (when we began working with scRNAseq data) the Smart-Seq 2 protocol was developed. The method relies on a template-switch oligo to achieve full-length sequencing of transcripts.\nOur processing of the resulting data consists of a modified snakemake workflow developed for single cell RNA seq data [@orjuelaARMORAutomatedReproducible2019]. I’ve modified this workflow to include our favorite tools\nOur workflowAs you might see, our workflow includes read alignment using STAR. If our ultimate goal is to quanitfy the expression of all transcripts in the cell, we first need a way to assign reads to known (or unknown transcripts). This can be accomplished either by alignment to a reference genome (alignment-based methods) or comparison to a reference transcriptome (alignment-free methods). This second approach is exemplified by Salmon and Kallisto and is simply a comparison of each read sequence to all known transcript sequences.\nWith the entire universe of human RNA sequencing data, reference transcriptomes are extremely high quality and there are sophisticated analyses demonstrating the superiority of alignment-free methods. In addition, these methods are much faster than alignment-based methods. The major drawback of these methods is that unannotated transcripts cannot be captured, because they are, by definition, not in the reference transcriptome.\nThey have gained widespread adoption especially with droplet-based scRNAseq approaches where full transcript sequences are not\nAs we work with Smart-seq2 data that yields complete transcript sequences, we are able to discover unannotated transcripts differential isofrom usage. We therefore rely on alignment-based transcript quantitation. The problem I face I’m facing is how to analyze this differential isoform usage.\nI am interested in rigorous approaches such as IsoformSwitchAnalyzeR but haven’t gotten that up and running yet. Our more immediate problem is simply quantifying differential expression and all the other clever analyses typical in scRNAseq (pseudotime, rna velocity, etc.). And I’d like not to be led astray by unusual isoforms in the process.\nThe first step in any project is exploratory data analysis. To make EDA possible with differential transcript usage, we need a robust genome browser that can display alignment tracks for 100s to 1000s of cells with quick uptime and private storage.\nMy ideal scenario would be that I pass to a script: 1) a directory of files 2) a reference genome 3) a csv with cell metadata. Then I’d like to be given an interactive browser with a stable url and the capacity to display hundreds of cells in groups corresponding to the cell metadata. It would also be nice If I could get a meta-track that would display an alignment which summarizes coverage for all cells matching a given condition, e.g. treated/untreated, day 1,2,3, etc.\nOur computing setup is two ubuntu linux servers behind an institutional firewall. I’ve looked at three options and am open to suggestions.\n1. JBrowse\nThis was my first approach. Installation was relatively painless but configuration was pretty difficult for me. Jbrowse offers two methods of configuring browser tracks, JSON or .conf (a flat text file). I was previously pretty unfamiliar with json so opted first for .conf configuration. It began to seem that the ability to specify track metadata from an external file would only be possible using the json format, so I wrote a python script to configure the appropriate json configuration file from a directory of bigwig files. This is currently the lowest impact solution I’ve found.\n2. UCSC\nThe UCSC genome browser occupies a special place in the hearts of many scientists. When making a solution for bench-side lab members it is sometimes difficult to argue with preferences. I was reluctant to use UCSC genome browser to host our data because the accumulation of computational biology methods, the sometimes difficult documentation, and our preference for ensembl references.\nAdditionally, because we are operating behind a strict institutional firewall I don’t have access to a publicly available webserver. This makes hosting a custom trackhub out of the question. I was pleased to see that the UCSC genome browser in a cloud (UCSC GBIC) made the installation process quite painless. And I was hopeful that we might host our own data locally while operating a UCSC instanace with reference data from the cloud. This dream still seems just out of reach, unfortunately.\n3. IGV.js\nReferences\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-10-25T11:03:15-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2020-12-01-journal-club-notes-on-chromatin-accessibility/",
+    "title": "Journal Club Notes on Chromatin Accessibility",
+    "description": "Notes from Journal Club",
+    "author": [
+      {
+        "name": "Kevin Stachelek",
+        "url": "https://stchlk.rbind.io"
+      }
+    ],
+    "date": "2020-12-01",
+    "categories": [],
+    "contents": "\nI’m reading an article on\nDynamic interplay between enhancer–promoter topology and gene activity\nIt is about chromatin accessiblity. It seems to describe a system for measuring the proximity of promoter-enhancer pairs.\nSo far I have only covered the setup of the system and a few control experiments designed to assess it’s reliability.\nI started reading another paper on the advice of my PI:\nUbiquitously transcribed genes use alternative polyadenylation to achieve tissue-specific expression\nI’m not too familiar with polyadenylation as a regulatory mechanism.\nThey claim that more than half of human genes use alternative cleavage and polyadenylation to generate mRNA transcripts that differ in the lengths of their 3’ untranslated regions\nInterestingly, they claim that multi-UTR genes mostly change 3’ UTR isoform ratios to achieve tissue specificity.\nSo, instead of finding global shifts in 3’ UTR length during transformation and differentiation, they identify tissue -specific groups of multi-UTR genes that change their 3’ UTR ratios.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-10-25T11:03:15-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2020-12-01-karyoploter-for-somatic-copy-number-analysis/",
+    "title": "Karyoploter for Somatic Copy Number Analysis",
+    "description": "Copy Number Analysis",
+    "author": [
+      {
+        "name": "Kevin Stachelek",
+        "url": "https://stchlk.rbind.io"
+      }
+    ],
+    "date": "2020-12-01",
+    "categories": [],
+    "contents": "\n\n\n\nI have recently been using Karyoploter for plotting somatic copy number alterations.\nI started doing this so that I could visualize gains and losses over multiple samples in a heatmap format. I hope that developing skills plotting with karyoploter will allow me to better visualize genomic data in an R environment.\nUnfortunately, in order to plot multiple samples I need to do some for-loop hackery.\nFirst, I define a function that plots segment data for an individual sample, plot_base_seg. This includes the basic karyoploter function kpPlotRegions. I also define a counter variable, tn which will define spacing between samples.\n\n\n\nThen, I create a second function, plot_all_to_file which iterates over a grangeslist object of all samples, feeding each to plot_base_seg with purrr which outputs a pdf heatmap.\n\n\n\n\n\n\nKaryoploter Heatmap\n\n\n",
+    "preview": {},
+    "last_modified": "2022-10-25T11:03:15-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2020-12-01-lab-meeting-our-experience-with-seurat/",
+    "title": "Lab Meeting: Our Experience with Seurat",
+    "description": "Experience with Seurat so far",
+    "author": [
+      {
+        "name": "Kevin Stachelek",
+        "url": "https://stchlk.rbind.io"
+      }
+    ],
+    "date": "2020-12-01",
+    "categories": [],
+    "contents": "\nI presented at our weekly lab meeting last Friday and described our experiences with Seurat on our single cell data.\nWe have two projects ongoing:\nTranscriptional Response to Rb Loss in the Retinoblastoma Cell of Origin Single Cell RNA Sequencing (scRNAseq)\nChanges associated with retinal cone precursor development Single Cell RNA Sequencing (scRNAseq)\nI tried to cover:\nOur initial approaches to analyzing single cell data and why they fell short.\nHow we applied Seurat and what advantages it has offered.\nOther ways forward with similar mature single cell analysis tools.\nYou can view the slides here\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-10-25T11:03:15-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2020-12-01-methods-for-single-cell-scna-detection-and-clustering/",
+    "title": "Methods for Single Cell SCNA Detection and Clustering",
+    "description": "A Review",
+    "author": [
+      {
+        "name": "Kevin Stachelek",
+        "url": "https://stchlk.rbind.io"
+      }
+    ],
+    "date": "2020-12-01",
+    "categories": [],
+    "contents": "\nThe issue\nI’m working on somatic copy number alterations (SCNA) in single cells. Lots of interesting work on this topic is being done by the Kuhn/Hicks lab at USC. The problem I’m focusing on here is clustering of SCNA in single cells.\nThe Software\nI’ve so far found three software pacakages for SCNA calling and sample clustering, two come from two labs at Cold Spring Harbor Laboratory (CSHL), with some overlapping personnel.\nGinkgo (Garvin et al., 2015)\nSCclust\nGinkgo comes as an integrated shiny app hosted at CSHL while SCclust is under active development and seems to require extensive configuration and installation.\nThe third comes as a bioconductor package and integrates karyotype heterogeneity.\nAneufinder (Bakker et al., 2016)\nEach of them seem to proceed from .bam/.bed input files and yield SCNA segmentation profiles and sample dendrograms on a range of metrics (euclidean distance, correlation, etc.)\nThe Problem\nAfter trying some of our data in Ginkgo, my PI commented that an unbiased comparison between SCNA profiles for the purposes of building a tree might be deceptive because correlation of some features might be due to similar selective pressures and disease processes rather than shared inheritance between cells.\nSome background, it is thought that tumor evolution occurs through clonal evolution. That is, minor changes in the genome of a given cell result in proliferation of that cell and formation of a clone. This is thought to lie behind chemotherapy resistance and relapse. Chemotherapy kills all but a few resistant cells which then grow out as a clone and are refractory to future chemotherapy.\nIn retinoblastoma as in many cancers, stereotypical SCNA profiles are common. The functional significance of these changes is poorly understood, but it is reasonable to think that certain changes confer a survival advantage. It is therefore reasonable to think that SCNAs might arise in overlapping regions in two clones despite there being no direct relation between the two. If you’re trying to infer clones from SCNA data then, it’s not enough to look at overall correlation between two cells.\nYou might be able to distinguish clones on the basis of the breakpoints of SCNAs, as it would be much less likely that two separate clones could develop SCNA in identical chromosomal regions.\nI don’t understand what clustering method would take that into account. The specifics of clustering is a bit of blind-spot for me. I understand the principles behind different methods (complete, average, ward, etc.) but I’m not clear how to account for this seeming limitation. Doubtless it’s a common worry in application of clustering to many datasets.\nSo Which To Use?\nI’m also still uncertain the best implementation of single cell SCNA analysis to run. Can either method address this issue?\nGinkgo\nGinkgo seems to be an implementation of the method laid out in Baslan et al. (2015)\nI’ve found several citations for Ginkgo and/or Baslan et al. (2015).\nOne comparison between SCNA called from single cell RNA sequencing data (Poirion et al., 2018).\nAnother method for calling SCNA from single cell RNA sequencing data (Patel et al., 2014).\nAn application for deriving estimates of chromosomal instability from single cell SCNA (Greene et al., 2016)\nA method for improved haplotype phasing by relying on whole genome amplification data (Satas and Raphael, 2018)\nAn application of single cell SCNA for parafin-embedded samples (Martelotto et al., 2017)\nA method of whole genome amplification proposed to reduce error and improve precision of single cell SCNA (Chen et al., 2017)\nAneufinder\nI’ve found some for Aneufinder:\nA method for improved haplotype phasing by relying on whole genome amplification data (Satas and Raphael, 2018)\nSCclust\nSCclust isn’t published yet, though the PI responsible seems to be deeply involved in single cell SCNA work. Information I’ve found relating to SCclust includes:\nCORE called “A Software Tool for Delineating Regions of Recurrent DNA Copy Number Alteration in Cancer” (Sun and Krasnitz, 2019)\nReferences\n\n\n\nBakker, B., Taudt, A., Belderbos, M.E., Porubsky, D., Spierings, D.C.J., Jong, T.V. de, Halsema, N., Kazemier, H.G., Hoekstra-Wakker, K., Bradley, A., et al. (2016). Single-cell sequencing reveals karyotype heterogeneity in murine and human malignancies. Genome Biology 17, 1–15.\n\n\nBaslan, T., Kendall, J., Ward, B., Cox, H., Leotta, A., Rodgers, L., Riggs, M., D’Italia, S., Sun, G., Yong, M., et al. (2015). Optimizing sparse sequencing of single cells for highly multiplex copy number profiling. Genome Research 125, 714–724.\n\n\nChen, C., Xing, D., Tan, L., Li, H., Zhou, G., Huang, L., and Xie, X.S. (2017). Single-cell whole-genome analyses by Linear Amplification via Transposon Insertion (LIANTI). Science 356, 189–194.\n\n\nGarvin, T., Aboukhalil, R., Kendall, J., Baslan, T., Atwal, G.S., Hicks, J., Wigler, M., and Schatz, M.C. (2015). Interactive analysis and assessment of single-cell copy-number variations. Nature Methods 12, 1058–1060.\n\n\nGreene, S.B., Dago, A.E., Leitz, L.J., Wang, Y., Lee, J., Werner, S.L., Gendreau, S., Patel, P., Jia, S., Zhang, L., et al. (2016). Chromosomal instability estimation based on next generation sequencing and single cell genome wide copy number variation analysis. PLoS ONE 11, 1–17.\n\n\nMartelotto, L.G., Baslan, T., Kendall, J., Geyer, F.C., Burke, K.A., Spraggon, L., Piscuoglio, S., Chadalavada, K., Nanjangud, G., Ng, C.K.Y., et al. (2017). Whole-genome single-cell copy number profiling from formalin-fixed paraffin-embedded samples. Nature Medicine 23, 376–385.\n\n\nPatel, A.P., Tirosh, I., Trombetta, J.J., Shalek, A.K., Gillespie, S.M., Wakimoto, H., Cahill, D.P., Nahed, B.V., Curry, W.T., Martuza, R.L., et al. (2014). Single-cell RNA-seq highlights intratumoral heterogeneity in primary glioblastoma. Science 344, 1396–1401.\n\n\nPoirion, O., Zhu, X., Ching, T., and Garmire, L.X. (2018). Using single nucleotide variations in single-cell RNA-seq to identify subpopulations and genotype-phenotype linkage. Nature Communications 9, 4892.\n\n\nSatas, G., and Raphael, B.J. (2018). Haplotype phasing in single-cell DNA-sequencing data. Bioinformatics 34, i211–i217.\n\n\nSun, G., and Krasnitz, A. (2019). Chapter 4 CORE : A Software Tool for Delineating Regions of Recurrent. 1878.\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-10-25T11:03:15-07:00",
+    "input_file": {}
+  }
+]
