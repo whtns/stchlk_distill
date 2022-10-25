@@ -11,8 +11,6 @@ links:
     url: "https://twitter.com/stchlk"
   - label: '`r fontawesome::fa("github")` Github'
     url: "https://github.com/whtns"
-  - label: '`r fontawesome::fa("graduation-cap")` Scholar'
-    url: "https://scholar.google.com/citations?user=7pMLCJsAAAAJ&hl=en"
 output:
   postcards::solana
 ---
