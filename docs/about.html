@@ -88,27 +88,30 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Kevin Stachelek | PhD Candidate: Publications</title>
+  <title>Kevin Stachelek | PhD Candidate: About this site</title>
 
+  <meta property="description" itemprop="description" content="Some additional details about the website"/>
 
   <link rel="icon" type="image/svg+xml" href="images/mountain-solid.svg"/>
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Kevin Stachelek | PhD Candidate: Publications"/>
+  <meta property="og:title" content="Kevin Stachelek | PhD Candidate: About this site"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Some additional details about the website"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Kevin Stachelek | PhD Candidate"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Kevin Stachelek | PhD Candidate: Publications"/>
+  <meta property="twitter:title" content="Kevin Stachelek | PhD Candidate: About this site"/>
+  <meta property="twitter:description" content="Some additional details about the website"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","output"]}},"value":[{"type":"character","attributes":{},"value":["Publications"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["About this site"]},{"type":"character","attributes":{},"value":["Some additional details about the website"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2146,15 +2149,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }</style>
   <!--/radix_placeholder_distill-->
   <script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
-  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-  <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-  <script src="site_libs/datatables-binding-0.24/datatables.js"></script>
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
-  <link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
-  <script src="site_libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
-  <link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-  <script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2181,7 +2175,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Publications","authors":[]}
+{"title":"About this site","description":"Some additional details about the website","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2206,127 +2200,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Publications</h1>
+<h1>About this site</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>Some additional details about the website</p></p>
 </div>
 
 
 <div class="d-article">
-<div class="layout-chunk" data-layout="l-body">
-<style type="text/css">
-.fcolumns {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: 0 10px
-}
-.fcolumn1 {
-  flex: 10%;
-}
-.fcolumn2 {
-  flex: 90%;
-}
-
-.fcolumn3 {
-  flex: 15%;
-}
-.fcolumn4 {
-  flex: 80%;
-}
-
-.fcolumnspace {
-  flex: 5%;
-}
-
-
-d-title {
-    display: none;
-  }
-
-.feat_img{
-  height: auto;
-  width: 95%!important;
-}
-
-d-article p {
-margin-bottom: 0em;
-}
-
-tbody th, table.dataTable tbody td {
-padding: 5px 10px;
-}
-
-thead {    
-    display:none;   
-}
-
-table.dataTable thead th {
-  border-bottom: none !important;
-}
-table.dataTable.no-footer {
-  border-bottom: none !important;
-}
-article table td {
-font-size: 1.06rem;
-}
-</style>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<script type="text/javascript">
-
-window.onload = function(){
-    l=document.links.length;
-    for(i = 0; i<l; i++) {
-        n = document.links[i].href.indexOf(".pdf");
-
-        if (n > 0){
-            document.links[i].setAttribute('target', '_blank');
-        }
-    }
-}
-
-$(document).ready(function(){
-    
-   // external links to new window
-    $('a[href^="http://"]').not('a[href*="http://stchlk.rbind.io/"]').attr('target','_blank');
-    
-    // force PDF Files to open in new window
-    $('a[href$=".pdf"]').attr('target', '_blank');
-
-  });
-</script>
-</div>
-<p><br></p>
-<div class="layout-chunk" data-layout="l-body-outset">
-<h2>Publications</h2>
-</div>
-<div class="layout-chunk" data-layout="l-body-outset">
-<div id="htmlwidget-77ecac9cb66332e141a9" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-77ecac9cb66332e141a9">{"x":{"filter":"none","vertical":false,"data":[["<p>Li, H.-T., Xu, L., Weisenberger, D. J., Li, M., Zhou, W., Peng, C.-C., Stachelek, K., Cobrinik, D., Liang, G. &amp; Berry, J. L. Characterizing DNA methylation signatures of retinoblastoma using aqueous humor liquid biopsy. Nat Commun 13, 5523 (2022). <a href = \"images/N/A\" id=\"pdflink\"><button id=\"pdfbutton\">Author PDF<\/button><\/a><\/p>\n","<p>Cambier, L., Stachelek, K., Triska, M., Jubran, R., Huang, M., Li, W., Zhang, J., Li, J. &amp; Cobrinik, D. Extracellular vesicle-associated repetitive element DNAs as candidate osteosarcoma biomarkers. Sci Rep 11, 94 (2021). <a href = \"images/N/A\" id=\"pdflink\"><button id=\"pdfbutton\">Author PDF<\/button><\/a><\/p>\n","<p>Kaneva, K., Merkurjev, D., Ostrow, D., Ryutov, A., Triska, P., Stachelek, K., Cobrinik, D., Biegel, J. A. &amp; Gai, X. Detection of mitochondrial DNA variants at low level heteroplasmy in pediatric CNS and extra-CNS solid tumors with three different enrichment methods. Mitochondrion 51, 97–103 (2020). <a href = \"images/N/A\" id=\"pdflink\"><button id=\"pdfbutton\">Author PDF<\/button><\/a><\/p>\n","<p>Berry, J. L., Xu, L., Kooi, I., Murphree, A. L., Prabakar, R. K., Reid, M., Stachelek, K., Le, B. H. A., Welter, L., Reiser, B. J., Chévez-Barrios, P., Jubran, R., Lee, T. C., Kim, J. W., Kuhn, P., Cobrinik, D. &amp; Hicks, J. Genomic cfDNA analysis of aqueous humor in retinoblastoma predicts eye salvage: the surrogate tumor biopsy for retinoblastoma. Molecular Cancer Research 16, 1701–1712 (2018). <a href = \"images/N/A\" id=\"pdflink\"><button id=\"pdfbutton\">Author PDF<\/button><\/a><\/p>\n","<p>Singh, H. P., Wang, S., Stachelek, K., Lee, S., Reid, M. W., Thornton, M. E., Craft, C. M., Grubbs, B. H. &amp; Cobrinik, D. Developmental stage-specific proliferation and retinoblastoma genesis in RB-deficient human but not mouse cone precursors. PNAS 115, E9391–E9400 (2018). <a href = \"images/N/A\" id=\"pdflink\"><button id=\"pdfbutton\">Author PDF<\/button><\/a><\/p>\n","<p>Kim, J. W., Jacobsen, B., Zolfaghari, E., Ferrario, A., Chevez-Barrios, P., Berry, J. L., Lee, D. K., Rico, G., Madi, I., Rao, N., Stachelek, K., Wang, L.-C. &amp; Gomer, C. Rabbit model of ocular indirect photodynamic therapy using a retinoblastoma xenograft. Graefe’s Archive for Clinical and Experimental Ophthalmology 255, (2017). <a href = \"images/N/A\" id=\"pdflink\"><button id=\"pdfbutton\">Author PDF<\/button><\/a><\/p>\n","<p>Berry, J. L., Xu, L., Murphree, A. L., Krishnan, S., Stachelek, K., Zolfaghari, E., McGovern, K., Lee, T. C., Carlsson, A., Kuhn, P., Kim, J. W., Cobrinik, D. &amp; Hicks, J. Potential of aqueous humor as a surrogate tumor biopsy for retinoblastoma. JAMA Ophthalmology 135, 1221–1230 (2017). <a href = \"images/N/A\" id=\"pdflink\"><button id=\"pdfbutton\">Author PDF<\/button><\/a><\/p>\n","<p>Stachelek, K., Harutyunyan, N., Lee, S., Harutyunyan, A., Kim, J., Xu, L., Berry, J. L., Nagiel, A., Reynolds, C. P., Murphree, A. L., Lee, T. C., Aparicio, J. G. &amp; Cobrinik, D. Non-Synonymous, synonymous, and non-coding nucleotide variants contribute to recurrently altered biological processes during retinoblastoma progression. Submitted. <a href = \"images/N/A\" id=\"pdflink\"><button id=\"pdfbutton\">Author PDF<\/button><\/a><\/p>\n","<p>Shayler, D., Stachelek, K., Lee, S., Bai, J., Aparicio, J. G., Kim, Y., Singh, M., Bay, M., Thornton, M., Craft, C., Grubbs, B., Bonaguidi, M., Singh, H., &amp; Cobrinik, David. Single cell transcriptomics reveals novel photoreceptor trajectories and a cancer-predisposed cone precursor state. <a href = \"images/N/A\" id=\"pdflink\"><button id=\"pdfbutton\">Author PDF<\/button><\/a><\/p>\n"]],"container":"<table class=\"compact hover\">\n  <thead>\n    <tr>\n      <th>Article<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"lengthChange":false,"searching":false,"info":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div class="layout-chunk" data-layout="l-body-outset">
-<h3>Selected Presentations</h3>
-</div>
-<div class="layout-chunk" data-layout="l-body-outset">
-<div class="fcolumns">
-<div class="fcolumn3">
-<p><a href = "images/N/A"> <img src="images" class = "feat_img"><br />
-</a></p>
-</div>
-<div class="fcolumnspace">
-
-</div>
-<div class="fcolumn4">
-<p style="margin:0px">
-TSRI
-</p>
-</div>
-</div>
-<hr style="padding:0;margin:10px">
-</div>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
