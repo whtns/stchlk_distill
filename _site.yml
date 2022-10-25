@@ -14,8 +14,6 @@ navbar:
       href: research.html
     - text: "Posts"
       href: posts.html
-    - text: "Apps & Websites"
-      href: shiny.html
     - text: "CV"
       href: cv-stachelek.html
   search: false
