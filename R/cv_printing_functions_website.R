@@ -166,7 +166,19 @@ print_section <- function(cv, section_id, glue_template = "article"){
 </div>
 <hr style="padding:0;margin:10px">
 \n\n'
-  }
+  } else if(glue_template == "post"){
+    glue_template <- '
+<div class="fcolumns">
+<div class="fcolumn1">
+{start_NA}
+</div>
+<div class="fcolumn2">
+<a href = "{loc}" >{title}</a>
+</div>
+</div>
+\n\n'
+    
+    }
   
 
   section_data <- dplyr::filter(cv$entries_data, section == section_id)

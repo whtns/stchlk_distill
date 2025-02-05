@@ -120,8 +120,8 @@ t = CV$entries_data %>%
   dplyr::mutate(start = ifelse(start == "N/A", NA, start)) %>%
   fill(start) %>%
   rowwise() %>%
-  mutate(pdf = glue::glue('<a href = "images/{loc}" id="pdflink"><button id="pdfbutton">Author PDF</button></a>'),
-         title = markdown::markdownToHTML(text = paste(title, pdf), fragment.only = TRUE)) %>%
+  # mutate(pdf = glue::glue('<a href = "images/{loc}" id="pdflink"><button id="pdfbutton">Author PDF</button></a>'),
+  #        title = markdown::markdownToHTML(text = paste(title, pdf), fragment.only = TRUE)) %>%
   select(Article = title)
  
 DT::datatable(t,
@@ -146,4 +146,12 @@ htmltools::tags$h3("Selected Presentations")
 
 ```{r results='asis', echo = FALSE, layout = "l-body-outset"}
 CV %<>% print_section("presentations", glue_template = "poster") 
+```
+
+```{r, echo = F, layout = "l-body-outset"}
+htmltools::tags$h3("Other Publications")
+```
+
+```{r results='asis', echo = FALSE, layout = "l-body-outset"}
+CV %<>% print_section("other publications", glue_template = "post") 
 ```

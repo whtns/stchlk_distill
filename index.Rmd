@@ -7,8 +7,8 @@ site: distill::distill_website
 links:
   - label: '`r fontawesome::fa("envelope")`    Email'
     url: "stachele@usc.edu"
-  - label: '`r fontawesome::fa("twitter")` Twitter'
-    url: "https://twitter.com/stchlk"
+  - label: '`r fontawesome::fa("bluesky")` Bluesky'
+    url: "https://bsky.app/profile/stchlk.bsky.social"
   - label: '`r fontawesome::fa("github")` Github'
     url: "https://github.com/whtns"
 output:

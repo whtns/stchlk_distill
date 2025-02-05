@@ -24,4 +24,6 @@ navbar:
 #   lang: en
 #   cookies_policy: url
 output:
-  distill::distill_article
+  distill::distill_article:
+    includes:
+      after_body: include_footer.html

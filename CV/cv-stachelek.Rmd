@@ -64,18 +64,17 @@ Kevin Stachelek {#title}
 `r fontawesome::fa("globe")` [stchlk.rbind.io](http://stchlk.rbind.io) `r knitr::asis_output("\U00B7")`  
 `r fontawesome::fa("orcid")` [orcidID](https://orcid.org/0000-0003-2085-695X) `r knitr::asis_output("\U00B7")` 
 `r fontawesome::fa("github")` [Github](https://github.com/whtns) `r knitr::asis_output("\U00B7")` 
-`r fontawesome::fa("twitter")` [Twitter](https://twitter.com/stchlk)  
+`r fontawesome::fa("twitter")` [Twitter](https://bsky.app/profile/stchlk.bsky.social)  
 <em style="font-size:0.8rem;">Last updated on `r Sys.Date()`</em>
 </div>
 
 <hr>
 
-<!-- <div style="font-size:0.9rem;"> -->
-<!-- ```{r} -->
-<!-- # Note the special double pipe so we modify the CV object in place -->
-<!-- CV %<>% print_text_block("intro")  -->
-<!-- ``` -->
-<!-- </div> -->
+```{r}
+# Note the special double pipe so we modify the CV object in place
+CV %<>% print_text_block("intro") 
+```
+
 
 Education {data-icon=graduation-cap }
 --------------------------------------------------------------------------------
@@ -152,4 +151,11 @@ Teaching {data-icon=university}
 
 ```{r}
 CV %<>% print_section('teaching', glue_template = "other")
+```
+
+Other Publications {data-icon=university}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('other publications', glue_template = "other")
 ```
