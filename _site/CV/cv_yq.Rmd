@@ -63,7 +63,7 @@ Ph.D Candidate, Cancer Biology and Genomics
 `r fontawesome::fa("graduation-cap")` [Google Scholar](https://scholar.google.com/citations?user=7pMLCJsAAAAJ&hl=en)  
 `r fontawesome::fa("orcid")` [orcidID](https://orcid.org/0000-0003-2085-695X) `r knitr::asis_output("\U00B7")` 
 `r fontawesome::fa("github")` [Github](https://github.com/whtns) `r knitr::asis_output("\U00B7")` 
-`r fontawesome::fa("github")` [bluesky](https://bluesky.com/stchlk)  
+`r fontawesome::fa("github")` [bluesky](https://bsky.app/profile/stchlk.bsky.social)  
 <em style="font-size:0.8rem;">Last updated on `r Sys.Date()`</em>
 </div>
 

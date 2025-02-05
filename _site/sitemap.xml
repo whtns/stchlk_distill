@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>http://stchlk.rbind.io/</loc>
-    <lastmod>2022-10-25T13:33:01-07:00</lastmod>
+    <lastmod>2025-02-05T13:59:55-08:00</lastmod>
   </url>
   <url>
     <loc>http://stchlk.rbind.io/posts.html</loc>
@@ -18,26 +18,26 @@
   </url>
   <url>
     <loc>http://stchlk.rbind.io/posts/2021-05-07-email-notifications-for-tmux-jobs/</loc>
-    <lastmod>2022-10-25T11:03:15-07:00</lastmod>
+    <lastmod>2025-02-05T13:37:41-08:00</lastmod>
   </url>
   <url>
     <loc>http://stchlk.rbind.io/posts/2020-12-01-genome-browsers-for-private-scrnaseq-data/</loc>
-    <lastmod>2022-10-25T11:03:15-07:00</lastmod>
+    <lastmod>2025-02-05T13:37:41-08:00</lastmod>
   </url>
   <url>
     <loc>http://stchlk.rbind.io/posts/2020-12-01-journal-club-notes-on-chromatin-accessibility/</loc>
-    <lastmod>2022-10-25T11:03:15-07:00</lastmod>
+    <lastmod>2025-02-05T13:37:41-08:00</lastmod>
   </url>
   <url>
     <loc>http://stchlk.rbind.io/posts/2020-12-01-karyoploter-for-somatic-copy-number-analysis/</loc>
-    <lastmod>2022-10-25T11:03:15-07:00</lastmod>
+    <lastmod>2025-02-05T13:37:41-08:00</lastmod>
   </url>
   <url>
     <loc>http://stchlk.rbind.io/posts/2020-12-01-lab-meeting-our-experience-with-seurat/</loc>
-    <lastmod>2022-10-25T11:03:15-07:00</lastmod>
+    <lastmod>2025-02-05T13:37:41-08:00</lastmod>
   </url>
   <url>
     <loc>http://stchlk.rbind.io/posts/2020-12-01-methods-for-single-cell-scna-detection-and-clustering/</loc>
-    <lastmod>2022-10-25T11:03:15-07:00</lastmod>
+    <lastmod>2025-02-05T13:37:41-08:00</lastmod>
   </url>
 </urlset>

@@ -6,7 +6,7 @@ angle: 150
 site: distill::distill_website
 links:
   - label: '`r fontawesome::fa("envelope")`    Email'
-    url: "stachele@usc.edu"
+    url: "mailto:stachele@usc.edu"
   - label: '`r fontawesome::fa("bluesky")` Bluesky'
     url: "https://bsky.app/profile/stchlk.bsky.social"
   - label: '`r fontawesome::fa("github")` Github'
@@ -27,8 +27,8 @@ meta() %>%
     image_alt = "Mount Olympus, WA",
     og_type = "website",
     og_author = "Kevin Stachelek",
-    bluesky_card_type = "summary",
-    bluesky_creator = "@stchlk"
+    twitter_card_type = "summary",
+    twitter_creator = "@stchlk"
   )
 
 ```

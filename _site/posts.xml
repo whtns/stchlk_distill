@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
-    <title>Kevin Stachelek | PhD Candidate</title>
+    <title>Kevin Stachelek | Doctoral Researcher</title>
     <link>http://stchlk.rbind.io/</link>
     <atom:link href="http://stchlk.rbind.io/posts.xml" rel="self" type="application/rss+xml"/>
     <description>Personal website for Kevin Stachelek M.S. 
 </description>
     <image>
-      <title>Kevin Stachelek | PhD Candidate</title>
+      <title>Kevin Stachelek | Doctoral Researcher</title>
       <url>http://stchlk.rbind.io/images/mountain-solid.svg</url>
       <link>http://stchlk.rbind.io/</link>
     </image>
