@@ -27,8 +27,8 @@ meta() %>%
     image_alt = "Mount Olympus, WA",
     og_type = "website",
     og_author = "Kevin Stachelek",
-    twitter_card_type = "summary",
-    twitter_creator = "@stchlk"
+    bluesky_card_type = "summary",
+    bluesky_creator = "@stchlk"
   )
 
 ```

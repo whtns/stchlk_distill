@@ -347,8 +347,8 @@ Seurat v3 includes sctransform, a new modeling approach for the normalization of
 ### So many tools!
 
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Too many awesome new datasets, biological findings, ML methods every second of every day. And they are spawning too many new ideas. I luv science &amp; I&#39;m going crazy (in a good way) that I can&#39;t keep up with all the coolness and just have one brain and two hands and no time. Fk!!!!</p>&mdash; ANSHUL KUNDAJE (@anshulkundaje) <a href="https://twitter.com/anshulkundaje/status/1116398619072942080?ref_src=twsrc%5Etfw">April 11, 2019</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="bluesky-tweet" data-lang="en"><p lang="en" dir="ltr">Too many awesome new datasets, biological findings, ML methods every second of every day. And they are spawning too many new ideas. I luv science &amp; I&#39;m going crazy (in a good way) that I can&#39;t keep up with all the coolness and just have one brain and two hands and no time. Fk!!!!</p>&mdash; ANSHUL KUNDAJE (@anshulkundaje) <a href="https://bluesky.com/anshulkundaje/status/1116398619072942080?ref_src=twsrc%5Etfw">April 11, 2019</a></blockquote>
+<script async src="https://platform.bluesky.com/widgets.js" charset="utf-8"></script>
 
 
 ### What's the most efficient way to pursue our (biological) questions?

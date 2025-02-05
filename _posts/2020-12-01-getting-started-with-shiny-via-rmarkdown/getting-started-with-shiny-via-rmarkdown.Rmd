@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 
-I work in a cancer research lab amidst exclusively wetlab researchers. We have gotten into single-cell sequencing despite scarce computational or mathematical expertise. I started as a technician after bachelor's and learned R and python from twitter and stack overflow. 
+I work in a cancer research lab amidst exclusively wetlab researchers. We have gotten into single-cell sequencing despite scarce computational or mathematical expertise. I started as a technician after bachelor's and learned R and python from bluesky and stack overflow. 
 
 I've made a little progress evangelizing among my wetlab colleagues but they are still mostly uncomfortable with command line work. 
 

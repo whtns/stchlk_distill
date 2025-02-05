@@ -26,7 +26,7 @@ Title, Department
 `r fontawesome::fa("graduation-cap")` [Google Scholar](https://scholar.google.com)  
 `r fontawesome::fa("orcid")` [orcidID](https://orcid.org/) `r knitr::asis_output("\U00B7")` 
 `r fontawesome::fa("github")` [Github](https://github.com/) `r knitr::asis_output("\U00B7")` 
-`r fontawesome::fa("github")` [Twitter](https://twitter.com/)  
+`r fontawesome::fa("github")` [bluesky](https://bluesky.com/)  
 <em style="font-size:0.8rem;">Last updated on `r Sys.Date()`</em>
 </div>
 
