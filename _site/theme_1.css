@@ -11,15 +11,14 @@
 /* Optional: embed custom fonts here with `@import`          */
 /* This must remain at the top of this file.                 */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono');
-@import url('https://fonts.googleapis.com/css2?family=Bitter');
 
 
 html {
   /*-- Main font sizes --*/
   --title-size:      40px;
-  --body-size:       1.06rem;
+  --body-size:       1.1rem;
   --code-size:       14px;
   --aside-size:      14px;
   --fig-cap-size:    13px;
@@ -27,14 +26,14 @@ html {
   --title-color:     #000000;
   --header-color:    #000000;
   --body-color:      #000000;
-  --aside-color:     #00523f;
+  --aside-color:     #0d7377;
   --fig-cap-color:   rgba(0, 0, 0, 0.6);
   /*-- Specify custom fonts ~~~ must be imported above   --*/
-  --heading-font:    "Bitter", serif;
+  --heading-font:    "Inter", sans-serif;
   --mono-font:       "DM Mono", monospace;
-  --body-font:       "Roboto", sans-serif;
-  --navbar-font:     "Bitter", sans-serif; /* websites + blogs only */
-  --aside-font:      "Roboto", sans-serif;
+  --body-font:       "Inter", sans-serif;
+  --navbar-font:     "Inter", sans-serif; /* websites + blogs only */
+  --aside-font:      "Inter", sans-serif;
 }
 
 /*-- ARTICLE METADATA --*/
@@ -66,8 +65,13 @@ d-appendix {
   --title-size:       18px;
   --text-color:       black;
   --text-size:        15px;
-  --hover-color:      white;
+  --hover-color:      #0d7377;
   --bkgd-color:       transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.distill-site-header a {
+  transition: color 0.2s ease;
 }
 
 .distill-site-footer {
@@ -89,8 +93,12 @@ d-appendix {
 
 /* Change link appearance */
 d-article a {
-  /*border-bottom: 2px solid #00523f;*/
   text-decoration: none;
+  color: #0d7377;
+}
+
+d-article a:hover {
+  text-decoration: underline;
 }
 
 #pdfbutton {
