@@ -1,11 +1,11 @@
 name: "personal-website-distill"
-title: "Kevin Stachelek | Doctoral Researcher"
+title: "Kevin Stachelek, Ph.D."
 favicon: images/mountain-solid.svg
 theme: theme_1.css
 description: |
- Personal website for Kevin Stachelek M.S. 
+ Personal website for Kevin Stachelek, Ph.D.
 output_dir: "_site"
-base_url: http://stchlk.rbind.io/
+base_url: https://stchlk.rbind.io/
 navbar:
   right:
     - text: "Home"
@@ -17,12 +17,6 @@ navbar:
     - text: "CV"
       href: cv-stachelek.html
   search: false
-# cookie_consent:
-#   style: simple
-#   type: express
-#   palette: light
-#   lang: en
-#   cookies_policy: url
 output:
   distill::distill_article:
     includes:
