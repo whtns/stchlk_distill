@@ -76,7 +76,7 @@ Disclaimer {#disclaimer}
 
 Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
 
-The source code is available [on github.com/nstrayer/cv](/Users/kevinstachelek/Documents/github-repos/personal-website-distill/CV-short).
+The source code is available [on github.com/whtns/stchlk_distill](https://github.com/whtns/stchlk_distill/tree/master/CV-short).
 
 Last updated on `r Sys.Date()`.
 

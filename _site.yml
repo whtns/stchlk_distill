@@ -4,8 +4,9 @@ favicon: images/mountain-solid.svg
 theme: theme_1.css
 description: |
  Personal website for Kevin Stachelek, Ph.D.
-output_dir: "_site"
+output_dir: "docs"
 base_url: https://stchlk.rbind.io/
+include: [".nojekyll", "CNAME", "cv-stachelek.pdf", "cv-stachelek.html"]
 navbar:
   right:
     - text: "Home"
