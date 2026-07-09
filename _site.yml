@@ -15,7 +15,7 @@ navbar:
     - text: "Posts"
       href: posts.html
     - text: "CV"
-      href: cv-stachelek.html
+      href: cv-stachelek.pdf
   search: false
 output:
   distill::distill_article:
