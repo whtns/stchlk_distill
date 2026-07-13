@@ -13,8 +13,6 @@ navbar:
       href: index.html
     - text: "Research"
       href: research.html
-    - text: "Web apps"
-      href: shiny.html
     - text: "Notes"
       href: posts.html
     - text: "CV"
