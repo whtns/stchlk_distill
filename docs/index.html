@@ -695,13 +695,13 @@ document.addEventListener('DOMContentLoaded', function(e) {
 </script>
           <meta name="twitter:title" content="Kevin Stachelek Personal Website" />
           <meta name="twitter:description" content="Kevin Stachelek&#39;s research portfolio" />
-          <meta name="twitter:url" content="https://stchlk.rbind.io/" />
+          <meta name="twitter:url" content="https://whtns.github.io/stchlk_distill/" />
           <meta name="twitter:image" content="images/olympus.jpg" />
           <meta name="twitter:image:alt" content="Mount Olympus, WA" />
           <meta name="twitter:card" content="summary" />
           <meta property="og:title" content="Kevin Stachelek Personal Website" />
           <meta property="og:description" content="Kevin Stachelek&#39;s research portfolio" />
-          <meta property="og:url" content="https://stchlk.rbind.io/" />
+          <meta property="og:url" content="https://whtns.github.io/stchlk_distill/" />
           <meta property="og:image" content="images/olympus.jpg" />
           <meta property="og:image:alt" content="Mount Olympus, WA" />
           <meta property="og:type" content="website" />
@@ -721,7 +721,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
           <div class="nav-right">
           <a href="index.html">Home</a>
           <a href="research.html">Research</a>
-          <a href="posts.html">Posts</a>
+          <a href="shiny.html">Web apps</a>
+          <a href="posts.html">Notes</a>
           <a href="cv-stachelek.pdf">CV</a>
           <a href="javascript:void(0);" class="nav-toggle">☰</a>
           </div>
@@ -772,7 +773,89 @@ document.addEventListener('DOMContentLoaded', function(e) {
       </div>
       <div class="row mb-5">
         <div class="col">
-          
+          <style>
+
+.pub-year-group {
+margin-bottom: 2rem;
+}
+.pub-year {
+font-size: 0.85rem;
+font-weight: 600;
+letter-spacing: 0.08em;
+color: #6b6b6b;
+border-bottom: 1px solid #e4e4e4;
+padding-bottom: 0.3rem;
+margin-bottom: 1rem;
+}
+.pub {
+margin-bottom: 1.25rem;
+line-height: 1.45;
+}
+.pub-authors {
+font-size: 0.9rem;
+color: #5a5a5a;
+}
+.pub-authors strong {
+color: #1a1a1a;
+}
+.pub-title {
+font-size: 1.02rem;
+color: #1a1a1a;
+text-decoration: none;
+border-bottom: 1px solid #cfcfcf;
+}
+a.pub-title:hover {
+border-bottom-color: #1a1a1a;
+}
+.pub-venue {
+font-size: 0.88rem;
+font-style: italic;
+color: #6b6b6b;
+}
+.pub-more {
+font-size: 0.9rem;
+margin-top: -0.5rem;
+}
+</style>
+          <div id="about" class="section level2">
+          <h2>About</h2>
+          <p>I’m a cancer biologist and computational genomicist. My
+          research uses single-cell and bulk sequencing to work out how
+          retinoblastoma tumors arise from developing cone
+          photoreceptors — which cell states are susceptible, and which
+          genomic alterations recur as tumors progress.</p>
+          <p>I build the analysis tooling that goes with that work: R
+          and Bioconductor packages, Shiny applications, and
+          reproducible Snakemake pipelines for single-cell data.</p>
+          </div>
+          <div id="selected-publications" class="section level2">
+          <h2>Selected publications</h2>
+          <section class="pub-year-group">
+                   <h3 class="pub-year">2025</h3>
+                   <div class="pub">
+                     <div class="pub-authors">Shayler DW, <strong>Stachelek K</strong>, Cambier L, Lee S, Bai J, Bhat B, Reid MW, Weisenberger DJ, Aparicio JG, Kim Y, Singh M, Bay M, Thornton ME, Doyle EK, Fouladian Z, Erberich SG, Grubbs BH, Bonaguidi MA, Craft CM, Singh HP, Cobrinik D</div>
+                     <div><a href="https://doi.org/10.7554/eLife.101918" class="pub-title">Identification and characterization of early human photoreceptor states and cell-state-specific retinoblastoma-related features</a></div>
+                     <div class="pub-venue">eLife</div>
+                   </div>
+          <div class="pub">
+                     <div class="pub-authors"><strong>Stachelek K</strong>, Bhat B, Cobrinik D</div>
+                     <div><a href="https://doi.org/10.46471/gigabyte.158" class="pub-title">Chevreul: an R bioconductor package for exploratory analysis of full-length single cell sequencing</a></div>
+                     <div class="pub-venue">Gigabyte</div>
+                   </div>
+                 </section>
+          <section class="pub-year-group">
+                   <h3 class="pub-year">2022</h3>
+                   <div class="pub">
+                     <div class="pub-authors"><strong>Stachelek K</strong>, Harutyunyan N, Lee S, Beck A, Kim J, Xu L, Berry JL, Nagiel A, Reynolds CP, Murphree AL, Lee TC, Aparicio JG, Cobrinik D</div>
+                     <div><a href="https://doi.org/10.1002/gcc.23120" class="pub-title">Non‐synonymous, synonymous, and non‐coding nucleotide variants contribute to recurrently altered biological processes during retinoblastoma progression</a></div>
+                     <div class="pub-venue">Genes, Chromosomes and Cancer</div>
+                   </div>
+                 </section>
+          <p class="pub-more">
+          <a href="research.html">All publications</a>  · 
+          <a href="cv-stachelek.pdf">Curriculum vitae (PDF)</a>
+          </p>
+          </div>
         </div>
       </div>
     </div>
@@ -814,7 +897,89 @@ document.addEventListener('DOMContentLoaded', function(e) {
               </div>
             </div>
             <div class="mt-4 mb-5 mx-2">
-              
+              <style>
+
+.pub-year-group {
+margin-bottom: 2rem;
+}
+.pub-year {
+font-size: 0.85rem;
+font-weight: 600;
+letter-spacing: 0.08em;
+color: #6b6b6b;
+border-bottom: 1px solid #e4e4e4;
+padding-bottom: 0.3rem;
+margin-bottom: 1rem;
+}
+.pub {
+margin-bottom: 1.25rem;
+line-height: 1.45;
+}
+.pub-authors {
+font-size: 0.9rem;
+color: #5a5a5a;
+}
+.pub-authors strong {
+color: #1a1a1a;
+}
+.pub-title {
+font-size: 1.02rem;
+color: #1a1a1a;
+text-decoration: none;
+border-bottom: 1px solid #cfcfcf;
+}
+a.pub-title:hover {
+border-bottom-color: #1a1a1a;
+}
+.pub-venue {
+font-size: 0.88rem;
+font-style: italic;
+color: #6b6b6b;
+}
+.pub-more {
+font-size: 0.9rem;
+margin-top: -0.5rem;
+}
+</style>
+              <div id="about" class="section level2">
+              <h2>About</h2>
+              <p>I’m a cancer biologist and computational genomicist. My
+              research uses single-cell and bulk sequencing to work out
+              how retinoblastoma tumors arise from developing cone
+              photoreceptors — which cell states are susceptible, and
+              which genomic alterations recur as tumors progress.</p>
+              <p>I build the analysis tooling that goes with that work:
+              R and Bioconductor packages, Shiny applications, and
+              reproducible Snakemake pipelines for single-cell data.</p>
+              </div>
+              <div id="selected-publications" class="section level2">
+              <h2>Selected publications</h2>
+              <section class="pub-year-group">
+                       <h3 class="pub-year">2025</h3>
+                       <div class="pub">
+                         <div class="pub-authors">Shayler DW, <strong>Stachelek K</strong>, Cambier L, Lee S, Bai J, Bhat B, Reid MW, Weisenberger DJ, Aparicio JG, Kim Y, Singh M, Bay M, Thornton ME, Doyle EK, Fouladian Z, Erberich SG, Grubbs BH, Bonaguidi MA, Craft CM, Singh HP, Cobrinik D</div>
+                         <div><a href="https://doi.org/10.7554/eLife.101918" class="pub-title">Identification and characterization of early human photoreceptor states and cell-state-specific retinoblastoma-related features</a></div>
+                         <div class="pub-venue">eLife</div>
+                       </div>
+              <div class="pub">
+                         <div class="pub-authors"><strong>Stachelek K</strong>, Bhat B, Cobrinik D</div>
+                         <div><a href="https://doi.org/10.46471/gigabyte.158" class="pub-title">Chevreul: an R bioconductor package for exploratory analysis of full-length single cell sequencing</a></div>
+                         <div class="pub-venue">Gigabyte</div>
+                       </div>
+                     </section>
+              <section class="pub-year-group">
+                       <h3 class="pub-year">2022</h3>
+                       <div class="pub">
+                         <div class="pub-authors"><strong>Stachelek K</strong>, Harutyunyan N, Lee S, Beck A, Kim J, Xu L, Berry JL, Nagiel A, Reynolds CP, Murphree AL, Lee TC, Aparicio JG, Cobrinik D</div>
+                         <div><a href="https://doi.org/10.1002/gcc.23120" class="pub-title">Non‐synonymous, synonymous, and non‐coding nucleotide variants contribute to recurrently altered biological processes during retinoblastoma progression</a></div>
+                         <div class="pub-venue">Genes, Chromosomes and Cancer</div>
+                       </div>
+                     </section>
+              <p class="pub-more">
+              <a href="research.html">All publications</a>  · 
+              <a href="cv-stachelek.pdf">Curriculum vitae (PDF)</a>
+              </p>
+              </div>
             </div>
         </div>
       </div>

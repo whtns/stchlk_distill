@@ -109,7 +109,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","output"]}},"value":[{"type":"character","attributes":{},"value":["Publications"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","css","output"]}},"value":[{"type":"character","attributes":{},"value":["Publications"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["pub.css"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2187,16 +2187,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }</style>
   <!--/radix_placeholder_distill-->
   <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
-  <link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-  <script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-  <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-  <script src="site_libs/datatables-binding-0.34.0/datatables.js"></script>
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />
-  <link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet" />
-  <script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
-  <link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
-  <script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2208,6 +2198,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
+  <link rel="stylesheet" href="pub.css" type="text/css"/>
 
 </head>
 
@@ -2229,7 +2220,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="nav-right">
 <a href="index.html">Home</a>
 <a href="research.html">Research</a>
-<a href="posts.html">Posts</a>
+<a href="shiny.html">Web apps</a>
+<a href="posts.html">Notes</a>
 <a href="cv-stachelek.pdf">CV</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
@@ -2289,49 +2281,81 @@ d-title {
 d-article p {
 margin-bottom: 0em;
 }
-
-tbody th, table.dataTable tbody td {
-padding: 5px 10px;
-}
-
-thead {    
-    display:none;   
-}
-
-table.dataTable thead th {
-  border-bottom: none !important;
-}
-table.dataTable.no-footer {
-  border-bottom: none !important;
-}
-article table td {
-font-size: 1.06rem;
-}
 </style>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<script>
-
-window.onload = function(){
-    l=document.links.length;
-    for(i = 0; i<l; i++) {
-        n = document.links[i].href.indexOf(".pdf");
-
-        if (n > 0){
-            document.links[i].setAttribute('target', '_blank');
-        }
-    }
-}
-
-</script>
 </div>
 <p><br></p>
 <div class="layout-chunk" data-layout="l-body-outset">
 <h2>Publications</h2>
 </div>
 <div class="layout-chunk" data-layout="l-body-outset">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-54437032e9ec7afd8792" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-54437032e9ec7afd8792">{"x":{"filter":"none","vertical":false,"data":[["Stachelek, K., Harutyunyan, N., Lee, S., Beck, A., Kim, J., Xu, L., Berry, J. L., Nagiel, A., Reynolds, C. P., Murphree, A. L., Lee, T. C., Aparicio, J. G. & Cobrinik, D. Non-Synonymous, Synonymous, and Non-Coding Nucleotide Variants Contribute to Recurrently Altered Biological Processes During Retinoblastoma Progression. Genes Chromosomes Cancer (2022) doi:10.1002/gcc.23120.","Li, H.-T., Xu, L., Weisenberger, D. J., Li, M., Zhou, W., Peng, C.-C., Stachelek, K., Cobrinik, D., Liang, G. & Berry, J. L. Characterizing DNA methylation signatures of retinoblastoma using aqueous humor liquid biopsy. Nat Commun 13, 5523 (2022).","Cambier, L., Stachelek, K., Triska, M., Jubran, R., Huang, M., Li, W., Zhang, J., Li, J. & Cobrinik, D. Extracellular vesicle-associated repetitive element DNAs as candidate osteosarcoma biomarkers. Sci Rep 11, 94 (2021).","Kaneva, K., Merkurjev, D., Ostrow, D., Ryutov, A., Triska, P., Stachelek, K., Cobrinik, D., Biegel, J. A. & Gai, X. Detection of mitochondrial DNA variants at low level heteroplasmy in pediatric CNS and extra-CNS solid tumors with three different enrichment methods. Mitochondrion 51, 97–103 (2020).","Berry, J. L., Xu, L., Kooi, I., Murphree, A. L., Prabakar, R. K., Reid, M., Stachelek, K., Le, B. H. A., Welter, L., Reiser, B. J., Chévez-Barrios, P., Jubran, R., Lee, T. C., Kim, J. W., Kuhn, P., Cobrinik, D. & Hicks, J. Genomic cfDNA analysis of aqueous humor in retinoblastoma predicts eye salvage: the surrogate tumor biopsy for retinoblastoma. Molecular Cancer Research 16, 1701–1712 (2018).","Singh, H. P., Wang, S., Stachelek, K., Lee, S., Reid, M. W., Thornton, M. E., Craft, C. M., Grubbs, B. H. & Cobrinik, D. Developmental stage-specific proliferation and retinoblastoma genesis in RB-deficient human but not mouse cone precursors. PNAS 115, E9391–E9400 (2018).","Kim, J. W., Jacobsen, B., Zolfaghari, E., Ferrario, A., Chevez-Barrios, P., Berry, J. L., Lee, D. K., Rico, G., Madi, I., Rao, N., Stachelek, K., Wang, L.-C. & Gomer, C. Rabbit model of ocular indirect photodynamic therapy using a retinoblastoma xenograft. Graefe’s Archive for Clinical and Experimental Ophthalmology 255, (2017).","Berry, J. L., Xu, L., Murphree, A. L., Krishnan, S., Stachelek, K., Zolfaghari, E., McGovern, K., Lee, T. C., Carlsson, A., Kuhn, P., Kim, J. W., Cobrinik, D. & Hicks, J. Potential of aqueous humor as a surrogate tumor biopsy for retinoblastoma. JAMA Ophthalmology 135, 1221–1230 (2017).","Stachelek, K., Harutyunyan, N., Lee, S., Harutyunyan, A., Kim, J., Xu, L., Berry, J. L., Nagiel, A., Reynolds, C. P., Murphree, A. L., Lee, T. C., Aparicio, J. G. & Cobrinik, D. Non-Synonymous, synonymous, and non-coding nucleotide variants contribute to recurrently altered biological processes during retinoblastoma progression. Submitted.","Shayler, D., Stachelek, K., Lee, S., Bai, J., Aparicio, J. G., Kim, Y., Singh, M., Bay, M., Thornton, M., Craft, C., Grubbs, B., Bonaguidi, M., Singh, H., & Cobrinik, David. Single cell transcriptomics reveals novel photoreceptor trajectories and a cancer-predisposed cone precursor state."]],"container":"<table class=\"compact hover\">\n  <thead>\n    <tr>\n      <th>Article<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"lengthChange":false,"searching":false,"info":false,"columnDefs":[{"name":"Article","targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<section class="pub-year-group">
+         <h3 class="pub-year">2025</h3>
+         <div class="pub">
+           <div class="pub-authors">Shayler DW, <strong>Stachelek K</strong>, Cambier L, Lee S, Bai J, Bhat B, Reid MW, Weisenberger DJ, Aparicio JG, Kim Y, Singh M, Bay M, Thornton ME, Doyle EK, Fouladian Z, Erberich SG, Grubbs BH, Bonaguidi MA, Craft CM, Singh HP, Cobrinik D</div>
+           <div><a href="https://doi.org/10.7554/eLife.101918" class="pub-title">Identification and characterization of early human photoreceptor states and cell-state-specific retinoblastoma-related features</a></div>
+           <div class="pub-venue">eLife</div>
+         </div>
+<div class="pub">
+           <div class="pub-authors"><strong>Stachelek K</strong>, Bhat B, Cobrinik D</div>
+           <div><a href="https://doi.org/10.46471/gigabyte.158" class="pub-title">Chevreul: an R bioconductor package for exploratory analysis of full-length single cell sequencing</a></div>
+           <div class="pub-venue">Gigabyte</div>
+         </div>
+       </section>
+<section class="pub-year-group">
+         <h3 class="pub-year">2022</h3>
+         <div class="pub">
+           <div class="pub-authors"><strong>Stachelek K</strong>, Harutyunyan N, Lee S, Beck A, Kim J, Xu L, Berry JL, Nagiel A, Reynolds CP, Murphree AL, Lee TC, Aparicio JG, Cobrinik D</div>
+           <div><a href="https://doi.org/10.1002/gcc.23120" class="pub-title">Non‐synonymous, synonymous, and non‐coding nucleotide variants contribute to recurrently altered biological processes during retinoblastoma progression</a></div>
+           <div class="pub-venue">Genes, Chromosomes and Cancer</div>
+         </div>
+<div class="pub">
+           <div class="pub-authors">Li HT, Xu L, Weisenberger DJ, Li M, Zhou W, Peng CC, <strong>Stachelek K</strong>, Cobrinik D, Liang G, Berry JL</div>
+           <div><a href="https://doi.org/10.1038/s41467-022-33248-2" class="pub-title">Characterizing DNA methylation signatures of retinoblastoma using aqueous humor liquid biopsy</a></div>
+           <div class="pub-venue">Nature Communications</div>
+         </div>
+       </section>
+<section class="pub-year-group">
+         <h3 class="pub-year">2021</h3>
+         <div class="pub">
+           <div class="pub-authors">Cambier L, <strong>Stachelek K</strong>, Triska M, Jubran R, Huang M, Li W, Zhang J, Li J, Cobrinik D</div>
+           <div><a href="https://doi.org/10.1038/s41598-020-77398-z" class="pub-title">Extracellular vesicle-associated repetitive element DNAs as candidate osteosarcoma biomarkers</a></div>
+           <div class="pub-venue">Scientific Reports</div>
+         </div>
+       </section>
+<section class="pub-year-group">
+         <h3 class="pub-year">2020</h3>
+         <div class="pub">
+           <div class="pub-authors">Kaneva K, Merkurjev D, Ostrow D, Ryutov A, Triska P, <strong>Stachelek K</strong>, Cobrinik D, Biegel JA, Gai X</div>
+           <div><a href="https://doi.org/10.1016/j.mito.2020.01.006" class="pub-title">Detection of mitochondrial DNA variants at low level heteroplasmy in pediatric CNS and extra-CNS solid tumors with three different enrichment methods</a></div>
+           <div class="pub-venue">Mitochondrion</div>
+         </div>
+       </section>
+<section class="pub-year-group">
+         <h3 class="pub-year">2018</h3>
+         <div class="pub">
+           <div class="pub-authors">Berry JL, Xu L, Kooi I, Murphree AL, Prabakar RK, Reid M, <strong>Stachelek K</strong>, Le BHA, Welter L, Reiser BJ, Chévez-Barrios P, Jubran R, Lee TC, Kim JW, Kuhn P, Cobrinik D, Hicks J</div>
+           <div><a href="https://doi.org/10.1158/1541-7786.MCR-18-0369" class="pub-title">Genomic cfDNA Analysis of Aqueous Humor in Retinoblastoma Predicts Eye Salvage: The Surrogate Tumor Biopsy for Retinoblastoma</a></div>
+           <div class="pub-venue">Molecular Cancer Research</div>
+         </div>
+<div class="pub">
+           <div class="pub-authors">Singh HP, Wang S, <strong>Stachelek K</strong>, Lee S, Reid MW, Thornton ME, Craft CM, Grubbs BH, Cobrinik D</div>
+           <div><a href="https://doi.org/10.1073/pnas.1808903115" class="pub-title">Developmental stage-specific proliferation and retinoblastoma genesis in RB-deficient human but not mouse cone precursors</a></div>
+           <div class="pub-venue">Proceedings of the National Academy of Sciences</div>
+         </div>
+       </section>
+<section class="pub-year-group">
+         <h3 class="pub-year">2017</h3>
+         <div class="pub">
+           <div class="pub-authors">Kim JW, Jacobsen B, Zolfaghari E, Ferrario A, Chevez-Barrios P, Berry JL, Lee DK, Rico G, Madi I, Rao N, <strong>Stachelek K</strong>, Wang Lc, Gomer C</div>
+           <div><a href="https://doi.org/10.1007/s00417-017-3805-8" class="pub-title">Rabbit model of ocular indirect photodynamic therapy using a retinoblastoma xenograft</a></div>
+           <div class="pub-venue">Graefe's Archive for Clinical and Experimental Ophthalmology</div>
+         </div>
+<div class="pub">
+           <div class="pub-authors">Berry JL, Xu L, Murphree AL, Krishnan S, <strong>Stachelek K</strong>, Zolfaghari E, McGovern K, Lee TC, Carlsson A, Kuhn P, Kim JW, Cobrinik D, Hicks J</div>
+           <div><a href="https://doi.org/10.1001/jamaophthalmol.2017.4097" class="pub-title">Potential of Aqueous Humor as a Surrogate Tumor Biopsy for Retinoblastoma</a></div>
+           <div class="pub-venue">JAMA Ophthalmology</div>
+         </div>
+       </section>
 </div>
 <div class="layout-chunk" data-layout="l-body-outset">
 <h3>Selected Presentations</h3>

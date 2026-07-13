@@ -22,7 +22,7 @@ meta() %>%
   meta_social(
     title = "Kevin Stachelek Personal Website",
     description = "Kevin Stachelek's research portfolio",
-    url = "https://stchlk.rbind.io/",
+    url = "https://whtns.github.io/stchlk_distill/",
     image = "images/olympus.jpg",
     image_alt = "Mount Olympus, WA",
     og_type = "website",
@@ -32,4 +32,43 @@ meta() %>%
 
 ```
 
+```{r, echo=FALSE, results='asis'}
+# postcards does not take a `css:` YAML key, so inline the shared publication styles
+cat("<style>", readLines("pub.css"), "</style>", sep = "\n")
+```
+
+```{r, include=FALSE}
+suppressPackageStartupMessages({
+  library(magrittr)
+  library(dplyr)
+  library(stringr)
+})
+
+source("R/cv_printing_functions_website.R")
+source("R/publications.R")
+
+CV <- create_CV_object(data_location = "data/", pdf_mode = 'false')
+```
+
+## About
+
+I'm a cancer biologist and computational genomicist. My research uses single-cell
+and bulk sequencing to work out how retinoblastoma tumors arise from developing
+cone photoreceptors — which cell states are susceptible, and which genomic
+alterations recur as tumors progress.
+
+I build the analysis tooling that goes with that work: R and Bioconductor
+packages, Shiny applications, and reproducible Snakemake pipelines for
+single-cell data.
+
+## Selected publications
+
+```{r, echo=FALSE}
+render_publications(CV, n = 3)
+```
+
+<p class="pub-more">
+<a href="research.html">All publications</a> &nbsp;·&nbsp;
+<a href="cv-stachelek.pdf">Curriculum vitae (PDF)</a>
+</p>
 

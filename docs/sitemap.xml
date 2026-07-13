@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
-    <loc>https://stchlk.rbind.io/</loc>
-    <lastmod>2026-02-06T14:04:17-08:00</lastmod>
+    <loc>https://whtns.github.io/stchlk_distill/</loc>
+    <lastmod>2026-07-13T13:51:06-07:00</lastmod>
   </url>
   <url>
-    <loc>https://stchlk.rbind.io/posts.html</loc>
-    <lastmod>2026-02-06T13:44:31-08:00</lastmod>
+    <loc>https://whtns.github.io/stchlk_distill/posts.html</loc>
+    <lastmod>2026-07-13T13:51:11-07:00</lastmod>
   </url>
   <url>
-    <loc>https://stchlk.rbind.io/research.html</loc>
-    <lastmod>2026-02-06T14:03:52-08:00</lastmod>
+    <loc>https://whtns.github.io/stchlk_distill/research.html</loc>
+    <lastmod>2026-07-13T13:50:48-07:00</lastmod>
   </url>
   <url>
-    <loc>https://stchlk.rbind.io/shiny.html</loc>
+    <loc>https://whtns.github.io/stchlk_distill/shiny.html</loc>
     <lastmod>2026-02-06T14:19:12-08:00</lastmod>
   </url>
   <url>
-    <loc>https://stchlk.rbind.io/posts/2021-05-07-email-notifications-for-tmux-jobs/</loc>
+    <loc>https://whtns.github.io/stchlk_distill/posts/2021-05-07-email-notifications-for-tmux-jobs/</loc>
     <lastmod>2026-02-06T13:44:31-08:00</lastmod>
   </url>
   <url>
-    <loc>https://stchlk.rbind.io/posts/2020-12-01-genome-browsers-for-private-scrnaseq-data/</loc>
+    <loc>https://whtns.github.io/stchlk_distill/posts/2020-12-01-genome-browsers-for-private-scrnaseq-data/</loc>
     <lastmod>2026-02-06T13:44:31-08:00</lastmod>
   </url>
   <url>
-    <loc>https://stchlk.rbind.io/posts/2020-12-01-journal-club-notes-on-chromatin-accessibility/</loc>
+    <loc>https://whtns.github.io/stchlk_distill/posts/2020-12-01-journal-club-notes-on-chromatin-accessibility/</loc>
     <lastmod>2026-02-06T13:44:31-08:00</lastmod>
   </url>
   <url>
-    <loc>https://stchlk.rbind.io/posts/2020-12-01-karyoploter-for-somatic-copy-number-analysis/</loc>
+    <loc>https://whtns.github.io/stchlk_distill/posts/2020-12-01-karyoploter-for-somatic-copy-number-analysis/</loc>
     <lastmod>2026-02-06T13:44:31-08:00</lastmod>
   </url>
   <url>
-    <loc>https://stchlk.rbind.io/posts/2020-12-01-lab-meeting-our-experience-with-seurat/</loc>
+    <loc>https://whtns.github.io/stchlk_distill/posts/2020-12-01-lab-meeting-our-experience-with-seurat/</loc>
     <lastmod>2026-02-06T13:44:31-08:00</lastmod>
   </url>
   <url>
-    <loc>https://stchlk.rbind.io/posts/2020-12-01-methods-for-single-cell-scna-detection-and-clustering/</loc>
+    <loc>https://whtns.github.io/stchlk_distill/posts/2020-12-01-methods-for-single-cell-scna-detection-and-clustering/</loc>
     <lastmod>2026-02-06T13:44:31-08:00</lastmod>
   </url>
 </urlset>

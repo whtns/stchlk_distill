@@ -5,15 +5,17 @@ theme: theme_1.css
 description: |
  Personal website for Kevin Stachelek, Ph.D.
 output_dir: "docs"
-base_url: https://stchlk.rbind.io/
-include: [".nojekyll", "CNAME", "cv-stachelek.pdf", "cv-stachelek.html"]
+base_url: https://whtns.github.io/stchlk_distill/
+include: [".nojekyll", "cv-stachelek.pdf", "cv-stachelek.html"]
 navbar:
   right:
     - text: "Home"
       href: index.html
     - text: "Research"
       href: research.html
-    - text: "Posts"
+    - text: "Web apps"
+      href: shiny.html
+    - text: "Notes"
       href: posts.html
     - text: "CV"
       href: cv-stachelek.pdf

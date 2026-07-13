@@ -1,0 +1,8 @@
+# snapshot of the 'contact_info' sheet tab -- do not edit by hand
+loc,icon,contact
+email,fas fa-envelope,stachele@usc.edu
+website,fas fa-globe,[stchlk.rbind.io](http://stchlk.rbind.io)
+github,fab fa-github,[Github](https://github.com/whtns)
+google scholar,fas fa-graduation-cap,[Google Scholar](https://scholar.google.com/citations?user=7pMLCJsAAAAJ&hl=en)
+orcid,fab fa-orcid,[0000-0003-2085-695X](https://orcid.org/0000-0003-2085-695X)
+twitter,fab fa-twitter,[Twitter](https://twitter.com/stchlk)
