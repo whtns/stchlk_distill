@@ -1,0 +1,54 @@
+---
+title: "A year of pipelines at a genomics core"
+description: |
+  Three lessons from turning one-off analyses into fee-for-service pipelines at the UCI Genomics Research and Technology Hub.
+author:
+  - name: Kevin Stachelek
+    url: https://whtns.github.io/stchlk_distill/
+date: 11-16-2026
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+I started as the bioinformatician at the UCI Genomics Research and Technology Hub (GRThub) in October 2025. The core sequences samples for labs across campus, and my job is to turn those reads into results the labs can use. A year in, I maintain Snakemake pipelines for 10x and Parse single-cell RNA-seq, Xenium spatial transcriptomics, bulk RNA-seq, bisulfite sequencing, small RNA-seq and ATAC-seq. A separate demultiplexing pipeline runs on our DRAGEN server and in containers on the campus HPC cluster.
+
+Most of that code started as one-off analyses for a single lab. Getting it into a shape I could rerun for the next lab taught me three things.
+
+## Version everything
+
+Sooner or later someone asks how a result was made. It might be the lab, a reviewer, or me six months later. A git commit answers that question only if it captures everything that affects the output, and the code is the easy part. I also commit the config file for each run, the reference definitions (genome build and annotation release), and the software environment, pinned in a [pixi](https://pixi.sh) lockfile in most of the pipelines so that `pixi install` resolves the same tool versions next year as it did today.
+
+Pinning mattered in a place I didn't expect. Snakemake decides whether to rerun a rule partly by comparing the rule's code with the code that produced the existing output. A newer release of `snakefmt` reflowed every rule body in the bulk RNA-seq pipeline (`exec > {log}` became `exec >{log}`), so Snakemake treated every rule as changed and scheduled the entire run again from FASTQ. The formatter is now pinned along with everything else, and I run `snakemake -n` after formatting and before committing.
+
+## One pipeline per modality
+
+Keeping all the assays in one repository is tempting. Bulk RNA-seq, ATAC-seq and bisulfite sequencing all start with QC and trimming, and a shared codebase would remove some duplication. I keep them apart anyway. Each modality has its own repository, Snakefile, environment and README, so a change to ATAC-seq peak calling can't alter a single-cell run, and I only retest the pipeline I touched.
+
+The pipelines share conventions instead of code. Each one takes a `config.yaml` for the run and keeps its helper scripts in `src/`, and most show a Snakemake rule graph at the top of the README, so a lab can see every step of the analysis on one page before we start. A small companion repository pulls those rule graphs from every pipeline each week and rebuilds a slide deck from them, so the overview never drifts from the code.
+
+The price is some copied code between repositories. When I fix a trimming bug, I fix it in more than one place. I'd still rather pay that than explain to a lab why their analysis changed after an unrelated update.
+
+## Separate general logic from project-specific logic
+
+Every project asks for something the pipeline doesn't do: a custom contrast, a gene list from a grant, a figure laid out for a particular paper. If that code lands in the shared pipeline, the pipeline turns into an archive of past projects, and the next user has to read through all of it to find the steps that apply to them.
+
+The pattern I've settled on, starting with the bulk RNA-seq pipeline, gives code two homes. `src/` holds steps that apply to any run of that assay, such as building a Salmon index or assembling a count matrix. `proj_src/` holds code for the current project, and the shared repository's `.gitignore` excludes it, so that code is versioned with the project's own deliverables. When a project script proves useful beyond its first project, I generalize it, move it into `src/`, and expose its options in `config.yaml`. Most project code never makes that move, which keeps the shared pipeline about one assay instead of about the last dozen projects.
+
+## The pipelines
+
+All seven analysis pipelines are public on GitHub under [uci-grthub](https://github.com/uci-grthub):
+
+- [10x scRNA-seq](https://github.com/uci-grthub/uci_grthub_scrnaseq_pipeline)
+- [Parse scRNA-seq](https://github.com/uci-grthub/uci_grthub_parse_pipeline)
+- [Xenium spatial](https://github.com/uci-grthub/uci_grthub_spatial_pipeline)
+- [Bulk RNA-seq](https://github.com/uci-grthub/uci_grthub_rnaseq_pipeline)
+- [Bisulfite sequencing](https://github.com/uci-grthub/uci_grthub_bsseq_pipeline)
+- [Small RNA-seq](https://github.com/uci-grthub/uci_grthub_smallrnaseq_pipeline)
+- [ATAC-seq](https://github.com/uci-grthub/uci_grthub_atacseq_pipeline)
+
+If you run a core and have solved the duplication problem differently, I'd like to hear how.
