@@ -4,7 +4,7 @@ description: |
   Three lessons from turning one-off analyses into fee-for-service pipelines at the UCI Genomics Research and Technology Hub.
 author:
   - name: Kevin Stachelek
-    url: https://whtns.github.io/stchlk_distill/
+    url: https://stchlk.rbind.io
 date: 11-16-2026
 output:
   distill::distill_article:

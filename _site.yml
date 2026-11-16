@@ -5,9 +5,8 @@ theme: theme_1.css
 description: |
  Personal website for Kevin Stachelek, Ph.D.
 output_dir: "docs"
-base_url: https://whtns.github.io/stchlk_distill/
+base_url: https://stchlk.rbind.io/
 include: [".nojekyll", "cv-stachelek.pdf", "cv-stachelek.html"]
-exclude: ["AGENTS.md", "CLAUDE.md"]
 navbar:
   right:
     - text: "Home"
